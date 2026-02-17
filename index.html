@@ -108,7 +108,7 @@
             <div class="animate__animated animate__fadeInRight relative">
                 <div class="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full"></div>
                 <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl">
-                   <img src="screenshot-1-dashboard.png" alt="Dashboard Overview" class="rounded-xl border border-white/10 shadow-lg">
+                  <img src="screenshot-main.png" alt="Dashboard Overview" class="rounded-xl border border-white/10 shadow-lg cursor-pointer" onclick="openLightbox('screenshot-main.png')">
                 </div>
             </div>
         </div>
@@ -303,9 +303,33 @@
                 if (data[key]) el.placeholder = data[key];
             });
         }
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Stop scrolling while viewing image
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Also close lightbox if user presses 'Escape' key
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeLightbox();
+});
     </script>
+<!-- Lightbox Overlay -->
+<div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
 </body>
 </html>
+
 
 
 

@@ -3,904 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBF BudgetPro | Professional Financial Suite</title>
-    <!-- Tailwind for styling -->
+    <title>VBF BudgetPro | Definitive Financial & Property Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fonts & Animations -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        :root {
-            --gold: #d4af37;
-            --navy-deep: #0f172a;
-            --navy-light: #1e293b;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--navy-deep); 
-            color: #f8fafc; 
-            scroll-behavior: smooth;
-        }
+        :root { --gold: #d4af37; --navy-deep: #020617; --navy-light: #1e293b; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--navy-deep); color: #f8fafc; scroll-behavior: smooth; }
         .gold-text { color: var(--gold); }
         .gold-bg { background-color: var(--gold); }
-        .gold-border { border-color: var(--gold); }
-        
-        .glass { 
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-        }
-        
-        .hero-gradient {
-            background: radial-gradient(circle at top right, var(--navy-light), var(--navy-deep));
-        }
-
-        .card-hover:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--navy-deep); }
-        ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
+        .card-hover:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7); }
+        .lang-select { background: transparent; color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px; padding: 4px 12px; font-weight: 600; cursor: pointer; }
+        .platform-badge { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); color: var(--gold); padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <!-- LANGUAGE SWITCHER -->
-    <div class="fixed right-6 top-6 z-50 flex gap-2 glass rounded-full px-4 py-1 border border-white/10 text-xs font-bold">
-      <button onclick="setLanguage('en')" class="hover:gold-text" id="lang-en">EN</button>
-      <button onclick="setLanguage('fr')" class="hover:gold-text" id="lang-fr">FR</button>
-      <button onclick="setLanguage('de')" class="hover:gold-text" id="lang-de">DE</button>
-      <button onclick="setLanguage('es')" class="hover:gold-text" id="lang-es">ES</button>
-      <button onclick="setLanguage('pt')" class="hover:gold-text" id="lang-pt">PT</button>
-    </div>
-
     <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 glass border-b border-white/10">
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <!-- LOGO - Replace with your logo path -->
-                <img src="logo.png" alt="VBF Logo" class="w-10 h-10 rounded-lg shadow-lg">
-                <span class="text-xl font-extrabold tracking-tighter uppercase">
-                    VBF <span class="gold-text" data-i18n="title">BudgetPro</span>
-                </span>
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="VBF" class="w-10 h-10 rounded-lg">
+                <div class="hidden sm:block leading-none">
+                    <span class="text-lg font-black tracking-tighter uppercase block">VBF</span>
+                    <span class="text-[10px] gold-text font-bold tracking-[0.3em]">BUDGETPRO</span>
+                </div>
             </div>
-            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-                <a href="#features" class="hover:gold-text transition" data-i18n="features">Features</a>
-                <a href="#potential" class="hover:gold-text transition" data-i18n="potential">The Potential</a>
-                <a href="#licensing" class="hover:gold-text transition" data-i18n="licensing">Licensing</a>
-                <a href="#contact" class="px-5 py-2 gold-bg text-black rounded-full hover:bg-yellow-500 transition" data-i18n="get_license">Get License</a>
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                    <a href="#features" class="hover:text-white transition">Capabilities</a>
+                    <a href="#screenshots" class="hover:text-white transition">Screenshots</a>
+                    <a href="#download" class="hover:text-white transition">Download</a>
+                    <a href="#guide" class="hover:text-white transition">User Guide</a>
+                    <a href="#contact" class="hover:text-white transition">License</a>
+                </div>
+                <a href="#contact" class="px-5 py-2 gold-bg text-black rounded font-black text-[11px] uppercase hover:scale-105 transition">Get License</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="pt-32 pb-20 px-6 hero-gradient overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <header class="pt-48 pb-32 px-6 hero-gradient relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div class="animate__animated animate__fadeInLeft">
-                <div class="inline-block px-4 py-1 rounded-full border border-yellow-500/30 text-yellow-500 text-xs font-bold mb-6 uppercase tracking-widest" data-i18n="availability">
-                    Available for Windows, macOS & Android
+                <div class="flex gap-2 mb-6">
+                    <span class="platform-badge">Windows</span>
+                    <span class="platform-badge">Linux</span>
+                    <span class="platform-badge">Android Tablet</span>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                    <span data-i18n="hero_title">Professional Wealth <br><span class="gold-text">Management.</span></span>
+                <h1 class="text-6xl md:text-7xl font-black mb-8 leading-[0.9] uppercase">
+                    <span>Sovereign</span> <br>
+                    <span class="gold-text">Wealth Tracking.</span>
                 </h1>
-                <p class="text-gray-400 text-lg mb-10 max-w-xl" data-i18n="hero_desc">
-                    Take total control of your capital with a dual-engine suite. Developed in <b>Electron</b> for high-performance desktop analysis and <b>Android</b> for on-the-go tracking.
+                <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
+                    The definitive financial and property dashboard. Engineered for Electron and Android, providing deep asset analysis, property equity tracking, and AI-driven categorization.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="gold-bg text-black px-8 py-4 rounded-xl font-bold hover:scale-105 transition shadow-lg shadow-yellow-500/20" data-i18n="start_license">Start Your License</a>
-                    <a href="#features" class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition" data-i18n="explore_features">Explore Features</a>
+                <div class="flex gap-4">
+                    <a href="#download" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl shadow-yellow-500/10">Download Now</a>
+                    <a href="#guide" class="px-8 py-4 rounded font-black uppercase text-sm border border-gold gold-text hover:bg-gold/10 transition">User Guide</a>
                 </div>
             </div>
-            <div class="relative animate__animated animate__fadeInRight">
-                <!-- This would ideally be a screenshot of your app -->
-                <div class="glass p-2 rounded-3xl shadow-2xl rotate-3 relative z-10">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Dashboard" class="rounded-2xl">
-                </div>
-                <div class="absolute -bottom-6 -left-6 glass p-2 rounded-2xl shadow-2xl -rotate-6 z-20 w-48">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" alt="Mobile View" class="rounded-xl">
+            <div class="animate__animated animate__fadeInRight relative">
+                <div class="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full"></div>
+                <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl">
+                    <!-- Screenshot Placeholder -->
+                    <img src="screenshot-main.png" alt="Dashboard Screenshot" class="rounded-xl border border-white/10 shadow-lg">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- INTERACTIVE FEATURES SECTION -->
+    <!-- CORE CAPABILITIES -->
     <section id="features" class="max-w-7xl mx-auto px-6 py-24">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4" data-i18n="features_headline">Precision-Engineered Tools</h2>
-            <p class="text-gray-400" data-i18n="features_prompt">Click a card to see the technical depth of our ecosystem.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 text-left">
-            <!-- Analytics Card -->
-            <div onclick="openDetail('analytics')" class="glass p-8 rounded-3xl cursor-pointer card-hover transition-all group">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">📊</div>
-                <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="advanced_analytics">Advanced Analytics</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-i18n="analytics_desc">Professional reporting including trend lines, category allocation, and multi-year forecasting.</p>
-                <div class="mt-6 text-xs font-bold uppercase tracking-widest gold-text opacity-0 group-hover:opacity-100 transition" data-i18n="see_deep_dive">See Deep Dive →</div>
+        <h2 class="text-4xl font-black mb-12 gold-text text-center">Core Capabilities</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-3xl card-hover transition-all">
+                <div class="text-4xl mb-6">✨</div>
+                <h4 class="text-xl font-bold mb-4 gold-text">AI Smart Cleanup</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Intelligent categorization engine that audits historical transactions and suggests professional groupings.</p>
+                <span class="text-[10px] font-black uppercase tracking-widest text-gray-500">Technical Details →</span>
             </div>
-
-            <!-- Security Card -->
-            <div onclick="openDetail('security')" class="glass p-8 rounded-3xl cursor-pointer card-hover transition-all group border-yellow-500/10">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🔐</div>
-                <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="privacy_architecture">Privacy Architecture</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-i18n="privacy_desc">100% offline database ownership. No cloud tracking. PIN and Biometric security as standard.</p>
-                <div class="mt-6 text-xs font-bold uppercase tracking-widest gold-text opacity-0 group-hover:opacity-100 transition" data-i18n="security_specs">Security Specs →</div>
+            <div class="glass p-10 rounded-3xl card-hover transition-all border-yellow-500/10">
+                <div class="text-4xl mb-6">🏘️</div>
+                <h4 class="text-xl font-bold mb-4 gold-text">Property Financials</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Deep property analysis including Mortgage Balance, Equity Tracking, LTV calculations, and Investment ROI.</p>
+                <span class="text-[10px] font-black uppercase tracking-widest text-gray-500">Technical Details →</span>
             </div>
-
-            <!-- Global Card -->
-            <div onclick="openDetail('currency')" class="glass p-8 rounded-3xl cursor-pointer card-hover transition-all group">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🌍</div>
-                <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="global_engine">Global Engine</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-i18n="global_desc">Built-in currency converter with live rate fetching for expats and international business.</p>
-                <div class="mt-6 text-xs font-bold uppercase tracking-widest gold-text opacity-0 group-hover:opacity-100 transition" data-i18n="view_multi_currency">View Multi-Currency →</div>
+            <div class="glass p-10 rounded-3xl card-hover transition-all">
+                <div class="text-4xl mb-6">📈</div>
+                <h4 class="text-xl font-bold mb-4 gold-text">Wealth Forecast</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">A 5-year sovereign wealth engine based on current savings velocity and property appreciation factors.</p>
+                <span class="text-[10px] font-black uppercase tracking-widest text-gray-500">Technical Details →</span>
             </div>
         </div>
     </section>
 
-    <!-- THE POTENTIAL (SYNERGY) SECTION -->
-    <section id="potential" class="bg-slate-900/50 py-24 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-8" data-i18n="potential_headline">The Power of <br><span class="gold-text">Cross-Platform Synergy</span></h2>
-                <div class="space-y-8">
-                    <div class="flex gap-4">
-                        <div class="gold-text text-2xl font-bold">01.</div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-2" data-i18n="unified_data_structure">Unified Data Structure</h4>
-                            <p class="text-gray-400 text-sm" data-i18n="unified_data_desc">Both apps use a synchronized JSON engine. Export your budget from Electron on your PC and import it instantly to your Android device via local transfer.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="gold-text text-2xl font-bold">02.</div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-2" data-i18n="no_subscription">No Subscription ROI</h4>
-                            <p class="text-gray-400 text-sm" data-i18n="no_subscription_desc">While competitors charge monthly, VBF BudgetPro is a one-time license. The tool pays for itself within 6 months of use.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="gold-text text-2xl font-bold">03.</div>
-                        <div>
-                            <h4 class="font-bold text-lg mb-2" data-i18n="receipt_digitization">Receipt Digitization</h4>
-                            <p class="text-gray-400 text-sm" data-i18n="receipt_digitization_desc">Use the Android app to scan receipts on the spot. The compressed image data is stored within your database for desktop audit later.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="glass p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-bold gold-text mb-1">100%</div>
-                    <div class="text-xs uppercase font-bold text-gray-500" data-i18n="offline_privacy">Offline Privacy</div>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center mt-8">
-                    <div class="text-3xl font-bold gold-text mb-1">150+</div>
-                    <div class="text-xs uppercase font-bold text-gray-500" data-i18n="currencies">Currencies</div>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-bold gold-text mb-1">0</div>
-                    <div class="text-xs uppercase font-bold text-gray-500" data-i18n="monthly_fees">Monthly Fees</div>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center mt-8">
-                    <div class="text-3xl font-bold gold-text mb-1">XLSX</div>
-                    <div class="text-xs uppercase font-bold text-gray-500" data-i18n="full_exports">Full Exports</div>
-                </div>
+    <!-- SCREENSHOTS -->
+    <section id="screenshots" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-4xl font-black mb-12 gold-text text-center">Screenshots</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <img src="screenshot-dashboard.png" alt="Dashboard" class="rounded-xl border border-white/10 shadow-lg">
+            <img src="screenshot-property.png" alt="Property Analysis" class="rounded-xl border border-white/10 shadow-lg">
+            <img src="screenshot-forecast.png" alt="Wealth Forecast" class="rounded-xl border border-white/10 shadow-lg">
+        </div>
+    </section>
+
+    <!-- DOWNLOAD & LICENSE -->
+    <section id="download" class="max-w-3xl mx-auto px-6 py-24">
+        <div class="glass p-12 rounded-[3rem] shadow-2xl relative text-center">
+            <h2 class="text-3xl font-black mb-4 uppercase gold-text">Download & Activate</h2>
+            <p class="text-gray-400 text-sm mb-8">Get started with VBF BudgetPro. Download the latest version and activate with your professional license key.</p>
+            <a href="https://github.com/your-username/your-repo/releases/latest/download/VBF.Pro.navigator.Setup.1.0.0.exe" class="gold-bg text-black font-black py-5 px-10 rounded-lg hover:bg-yellow-500 transition shadow-xl uppercase tracking-widest text-lg inline-block mb-4" download>
+                Download for Windows
+            </a>
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-2">How to Activate</h3>
+                <ol class="text-gray-400 text-left mx-auto max-w-lg list-decimal pl-6">
+                    <li>Install and launch the app.</li>
+                    <li>Go to <b>Settings &gt; License</b> in the app.</li>
+                    <li>Paste your license key and click <b>Activate</b>.</li>
+                    <li>Enjoy full access to all features!</li>
+                </ol>
             </div>
         </div>
     </section>
 
-    <!-- LICENSING WORKFLOW -->
-    <section id="licensing" class="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16" data-i18n="obtaining_license">Obtaining Your <span class="gold-text">Professional License</span></h2>
-        <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
-            <div class="flex-1">
-                <div class="w-12 h-12 gold-bg text-black font-bold flex items-center justify-center rounded-full mx-auto mb-4">1</div>
-                <h5 class="font-bold mb-2" data-i18n="step1">Submit Inquiry</h5>
-                <p class="text-gray-400 text-xs" data-i18n="step1_desc">Choose your platform and fill the secure form below.</p>
-            </div>
-            <div class="hidden md:block text-gray-700">→</div>
-            <div class="flex-1">
-                <div class="w-12 h-12 gold-bg text-black font-bold flex items-center justify-center rounded-full mx-auto mb-4">2</div>
-                <h5 class="font-bold mb-2" data-i18n="step2">Secure Payment</h5>
-                <p class="text-gray-400 text-xs" data-i18n="step2_desc">Receive PayPal link via email for your license.</p>
-            </div>
-            <div class="hidden md:block text-gray-700">→</div>
-            <div class="flex-1">
-                <div class="w-12 h-12 gold-bg text-black font-bold flex items-center justify-center rounded-full mx-auto mb-4">3</div>
-                <h5 class="font-bold mb-2" data-i18n="step3">Instant Delivery</h5>
-                <p class="text-gray-400 text-xs" data-i18n="step3_desc">Your unique key and secure download link are sent immediately.</p>
+    <!-- USER GUIDE / FAQ -->
+    <section id="guide" class="max-w-4xl mx-auto px-6 py-24">
+        <div class="glass p-12 rounded-[3rem] shadow-2xl relative">
+            <h2 class="text-3xl font-black mb-4 uppercase gold-text">User Guide & FAQ</h2>
+            <div class="space-y-6 text-gray-300">
+                <div>
+                    <h4 class="font-bold gold-text mb-2">How do I import my financial data?</h4>
+                    <p>Use the import function in the dashboard to upload your bank statements or property data in supported formats (CSV, XLSX).</p>
+                </div>
+                <div>
+                    <h4 class="font-bold gold-text mb-2">Is my data private?</h4>
+                    <p>Yes. All data is stored locally and encrypted. No information is sent to external servers.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold gold-text mb-2">How does the license system work?</h4>
+                    <p>Each license key is unique and can be activated offline. You can request a key using the form below.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold gold-text mb-2">Need more help?</h4>
+                    <p>Contact our support team via the form below or email us at <a href="mailto:support@vbfpro.com" class="gold-text underline">support@vbfpro.com</a>.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT FORM -->
-    <section id="contact" class="max-w-3xl mx-auto px-6 py-24 mb-32 glass rounded-[3rem] shadow-2xl animate__animated animate__fadeIn">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-3" data-i18n="request_license">Request Your License</h2>
-            <p class="text-gray-400 text-sm" data-i18n="request_license_desc">Enter your details and our team will respond within 24 hours.</p>
-        </div>
-        
-        <!-- FORMSPREE INTEGRATION -->
-        <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="your_name">Your Name</label>
-                    <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-yellow-600 transition text-white">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="email_address">Email Address</label>
-                    <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-yellow-600 transition text-white">
-                </div>
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-32">
+        <div class="glass p-12 rounded-[3rem] shadow-2xl relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black mb-4 uppercase">License Inquiry</h2>
+                <p class="text-gray-400 text-sm">Obtain your professional lifetime activation key.</p>
             </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="target_platform">Target Platform</label>
-                <select name="platform" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-yellow-600 transition text-white">
-                    <option value="desktop" data-i18n="desktop_option">BudgetPro Desktop (Electron - Win/macOS)</option>
-                    <option value="android" data-i18n="android_option">BudgetPro Mobile (Android APK)</option>
-                    <option value="bundle" data-i18n="bundle_option">Full Bundle (Desktop + Mobile)</option>
+            <form action="https://formspree.io/f/your_id_here" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition">
+                </div>
+                <select name="platform" class="w-full bg-slate-900 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition">
+                    <option value="desktop">Electron (Windows/Linux)</option>
+                    <option value="tablet">Android Tablet</option>
+                    <option value="bundle">Enterprise Bundle (All Platforms)</option>
                 </select>
-            </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" data-i18n="additional_notes">Additional Notes</label>
-                <textarea name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-yellow-600 transition text-white" placeholder="Special requests, company invoice, etc."></textarea>
-            </div>
-            <button type="submit" class="w-full gold-bg text-black font-extrabold py-5 rounded-xl hover:bg-yellow-500 transition shadow-xl transform hover:scale-[1.02]" data-i18n="send_inquiry">
-                SEND INQUIRY
-            </button>
-        </form>
+                <button type="submit" class="w-full gold-bg text-black font-black py-5 rounded-lg hover:bg-yellow-500 transition shadow-xl uppercase tracking-widest text-sm">Request Activation</button>
+            </form>
+        </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500">
-        <div class="flex justify-center gap-6 mb-6">
-            <img src="input_file_0.png" alt="Logo" class="w-8 h-8 grayscale opacity-50">
-        </div>
-        <p class="text-xs uppercase tracking-[0.3em]" data-i18n="footer">&copy; 2024 VBF Software Solutions. Professional Grade Engineering.</p>
+    <footer class="py-20 text-center border-t border-white/5 opacity-40">
+        <img src="logo.png" alt="VBF" class="w-8 h-8 mx-auto grayscale mb-6">
+        <p class="text-[10px] font-black tracking-[0.5em] uppercase">&copy; 2026 VBF SOFTWARE SOLUTIONS</p>
     </footer>
-
-    <!-- DETAIL MODAL OVERLAY -->
-    <div id="detailModal" class="fixed inset-0 z-[6000] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
-        <div class="glass w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl p-8 md:p-12 relative animate__animated animate__zoomIn">
-            <button onclick="closeDetail()" class="absolute top-6 right-6 text-2xl hover:text-yellow-500 transition">✕</button>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT FOR MODALS AND TRANSLATIONS -->
-    <script>
-        // Multilingual content
-        const translations = {
-          en: {
-            title: "BudgetPro",
-            features: "Features",
-            potential: "The Potential",
-            licensing: "Licensing",
-            get_license: "Get License",
-            hero_title: "Professional Wealth <br><span class=\"gold-text\">Management.</span>",
-            hero_desc: "Take total control of your capital with a dual-engine suite. Developed in <b>Electron</b> for high-performance desktop analysis and <b>Android</b> for on-the-go tracking.",
-            start_license: "Start Your License",
-            explore_features: "Explore Features",
-            availability: "Available for Windows, macOS & Android",
-            features_headline: "Precision-Engineered Tools",
-            features_prompt: "Click a card to see the technical depth of our ecosystem.",
-            advanced_analytics: "Advanced Analytics",
-            analytics_desc: "Professional reporting including trend lines, category allocation, and multi-year forecasting.",
-            see_deep_dive: "See Deep Dive →",
-            privacy_architecture: "Privacy Architecture",
-            privacy_desc: "100% offline database ownership. No cloud tracking. PIN and Biometric security as standard.",
-            security_specs: "Security Specs →",
-            global_engine: "Global Engine",
-            global_desc: "Built-in currency converter with live rate fetching for expats and international business.",
-            view_multi_currency: "View Multi-Currency →",
-            potential_headline: "The Power of <br><span class=\"gold-text\">Cross-Platform Synergy</span>",
-            unified_data_structure: "Unified Data Structure",
-            unified_data_desc: "Both apps use a synchronized JSON engine. Export your budget from Electron on your PC and import it instantly to your Android device via local transfer.",
-            no_subscription: "No Subscription ROI",
-            no_subscription_desc: "While competitors charge monthly, VBF BudgetPro is a one-time license. The tool pays for itself within 6 months of use.",
-            receipt_digitization: "Receipt Digitization",
-            receipt_digitization_desc: "Use the Android app to scan receipts on the spot. The compressed image data is stored within your database for desktop audit later.",
-            offline_privacy: "Offline Privacy",
-            currencies: "Currencies",
-            monthly_fees: "Monthly Fees",
-            full_exports: "Full Exports",
-            obtaining_license: "Obtaining Your <span class=\"gold-text\">Professional License</span>",
-            step1: "Submit Inquiry",
-            step1_desc: "Choose your platform and fill the secure form below.",
-            step2: "Secure Payment",
-            step2_desc: "Receive PayPal link via email for your license.",
-            step3: "Instant Delivery",
-            step3_desc: "Your unique key and secure download link are sent immediately.",
-            request_license: "Request Your License",
-            request_license_desc: "Enter your details and our team will respond within 24 hours.",
-            your_name: "Your Name",
-            email_address: "Email Address",
-            target_platform: "Target Platform",
-            desktop_option: "BudgetPro Desktop (Electron - Win/macOS)",
-            android_option: "BudgetPro Mobile (Android APK)",
-            bundle_option: "Full Bundle (Desktop + Mobile)",
-            additional_notes: "Additional Notes",
-            send_inquiry: "SEND INQUIRY",
-            footer: "&copy; 2024 VBF Software Solutions. Professional Grade Engineering.",
-            // Modal section (see below for dynamic translation)
-          },
-          fr: {
-            title: "BudgetPro",
-            features: "Fonctionnalités",
-            potential: "Le Potentiel",
-            licensing: "Licence",
-            get_license: "Obtenir une licence",
-            hero_title: "Gestion de Fortune <br><span class=\"gold-text\">Professionnelle.</span>",
-            hero_desc: "Contrôlez totalement votre capital avec une suite bimoteur. Développé en <b>Electron</b> pour une analyse de bureau performante et <b>Android</b> pour un suivi nomade.",
-            start_license: "Commencer votre licence",
-            explore_features: "Explorer les fonctionnalités",
-            availability: "Disponible pour Windows, macOS & Android",
-            features_headline: "Outils de Précision",
-            features_prompt: "Cliquez sur une carte pour découvrir la profondeur technique de notre écosystème.",
-            advanced_analytics: "Analyses Avancées",
-            analytics_desc: "Rapports professionnels incluant des courbes de tendance, allocations par catégorie et prévisions pluriannuelles.",
-            see_deep_dive: "Voir le détail →",
-            privacy_architecture: "Architecture de Confidentialité",
-            privacy_desc: "Propriété complète de la base de données en mode hors ligne. Aucun suivi cloud. Sécurité PIN et biométrique en standard.",
-            security_specs: "Spécifications Sécu →",
-            global_engine: "Moteur Global",
-            global_desc: "Convertisseur de devises intégré avec taux en temps réel pour expatriés et business international.",
-            view_multi_currency: "Voir Multi-Devise →",
-            potential_headline: "La puissance de la <br><span class=\"gold-text\">synergie multi-plateforme</span>",
-            unified_data_structure: "Structure de Données Unifiée",
-            unified_data_desc: "Les deux applis utilisent un moteur JSON synchronisé. Exportez votre budget depuis Electron et importez-le instantanément sur Android en local.",
-            no_subscription: "Pas d’Abonnement",
-            no_subscription_desc: "Alors que nos concurrents facturent chaque mois, BudgetPro est sous licence unique. Rentable en 6 mois.",
-            receipt_digitization: "Numérisation de Reçus",
-            receipt_digitization_desc: "Scannez vos reçus instantanément. Les images sont stockées dans la base pour audit sur ordinateur.",
-            offline_privacy: "Confidentialité Locale",
-            currencies: "Devises",
-            monthly_fees: "Frais mensuels",
-            full_exports: "Exports complets",
-            obtaining_license: "Obtenir votre <span class=\"gold-text\">licence professionnelle</span>",
-            step1: "Soumettre une demande",
-            step1_desc: "Choisissez votre plateforme et remplissez le formulaire sécurisé ci-dessous.",
-            step2: "Paiement sécurisé",
-            step2_desc: "Recevez le lien PayPal par mail pour votre licence.",
-            step3: "Livraison immédiate",
-            step3_desc: "Votre clé et lien de téléchargement sont expédiés directement.",
-            request_license: "Demander votre licence",
-            request_license_desc: "Entrez vos informations, notre équipe vous répond sous 24h.",
-            your_name: "Votre nom",
-            email_address: "Adresse email",
-            target_platform: "Plateforme cible",
-            desktop_option: "BudgetPro Desktop (Electron - Win/macOS)",
-            android_option: "BudgetPro Mobile (Android APK)",
-            bundle_option: "Pack complet (Desktop + Mobile)",
-            additional_notes: "Commentaires",
-            send_inquiry: "ENVOYER",
-            footer: "&copy; 2024 VBF Software Solutions. Ingénierie professionnelle.",
-          },
-          de: {
-            title: "BudgetPro",
-            features: "Funktionen",
-            potential: "Das Potenzial",
-            licensing: "Lizenzierung",
-            get_license: "Lizenz erhalten",
-            hero_title: "Professionelles Vermögens-<br><span class=\"gold-text\">Management.</span>",
-            hero_desc: "Übernehmen Sie die volle Kontrolle über Ihr Kapital mit einer Dual-Engine-Suite. Entwickelt in <b>Electron</b> für Desktop-Analysen und <b>Android</b> für unterwegs.",
-            start_license: "Lizenz starten",
-            explore_features: "Funktionen entdecken",
-            availability: "Für Windows, macOS & Android verfügbar",
-            features_headline: "Präzisionsgefertigte Tools",
-            features_prompt: "Klicken Sie auf eine Karte, um die Tiefe unseres Ökosystems zu entdecken.",
-            advanced_analytics: "Fortschrittliche Analysen",
-            analytics_desc: "Professionelle Berichte inklusive Trendlinien, Kategoriezuteilung und Mehrjahresprognose.",
-            see_deep_dive: "Details ansehen →",
-            privacy_architecture: "Datenschutz-Architektur",
-            privacy_desc: "100 % Offline-Datenbankbesitz. Keine Cloud, PIN & Biometrie-Standard.",
-            security_specs: "Sicherheitsdetails →",
-            global_engine: "Global Engine",
-            global_desc: "Integrierter Währungsrechner mit Live-Kursen für Expats und internationale Geschäfte.",
-            view_multi_currency: "Weitere Währungen →",
-            potential_headline: "Die Kraft von <br><span class=\"gold-text\">Cross-Platform Synergie</span>",
-            unified_data_structure: "Einheitliche Datenstruktur",
-            unified_data_desc: "Beide Apps nutzen eine synchronisierte JSON-Engine. Exportieren Sie Ihr Budget auf den PC, importieren Sie es auf Android im lokalen Netzwerk.",
-            no_subscription: "Keine Abo-Kosten",
-            no_subscription_desc: "Während andere monatlich berechnen, ist BudgetPro eine Einmal-Lizenz. Amortisiert sich in 6 Monaten.",
-            receipt_digitization: "Belegdigitalisierung",
-            receipt_digitization_desc: "Scannen Sie Belege per Android-App. Bilddaten werden für PC-Audit gespeichert.",
-            offline_privacy: "Offline-Datenschutz",
-            currencies: "Währungen",
-            monthly_fees: "Monatliche Gebühren",
-            full_exports: "Voller Export",
-            obtaining_license: "So erhalten Sie Ihre <span class=\"gold-text\">professionelle Lizenz</span>",
-            step1: "Anfrage senden",
-            step1_desc: "Plattform auswählen, Formular ausfüllen.",
-            step2: "Sichere Zahlung",
-            step2_desc: "PayPal-Link zum Lizenzkauf per E-Mail.",
-            step3: "Sofortiger Zugriff",
-            step3_desc: "Ihr Schlüssel und Download-Link kommen sofort.",
-            request_license: "Lizenz anfragen",
-            request_license_desc: "Füllen Sie das Formular – wir melden uns in 24h.",
-            your_name: "Ihr Name",
-            email_address: "E-Mail-Adresse",
-            target_platform: "Zielplattform",
-            desktop_option: "BudgetPro Desktop (Electron - Win/macOS)",
-            android_option: "BudgetPro Mobile (Android APK)",
-            bundle_option: "Komplettpaket (Desktop + Mobile)",
-            additional_notes: "Zusätzliche Hinweise",
-            send_inquiry: "ANFRAGE SENDEN",
-            footer: "&copy; 2024 VBF Software Solutions. Professionelle Entwicklung.",
-          },
-          es: {
-            title: "BudgetPro",
-            features: "Características",
-            potential: "El Potencial",
-            licensing: "Licencia",
-            get_license: "Obtener Licencia",
-            hero_title: "Gestión de Patrimonio <br><span class=\"gold-text\">Profesional.</span>",
-            hero_desc: "Toma el control total de tu capital con una suite de doble motor. Desarrollada en <b>Electron</b> para análisis de escritorio y en <b>Android</b> para movilidad.",
-            start_license: "Comenzar tu Licencia",
-            explore_features: "Explorar Características",
-            availability: "Disponible para Windows, macOS & Android",
-            features_headline: "Herramientas De Precisión",
-            features_prompt: "Haz clic para ver la profundidad técnica de nuestro ecosistema.",
-            advanced_analytics: "Analítica Avanzada",
-            analytics_desc: "Informes profesionales con líneas de tendencias, asignación de categorías y proyecciones multianuales.",
-            see_deep_dive: "Ver detalle →",
-            privacy_architecture: "Arquitectura de Privacidad",
-            privacy_desc: "Propiedad 100% offline. Sin nubes. Seguridad PIN y biometría estándar.",
-            security_specs: "Especificaciones de Seguridad →",
-            global_engine: "Motor Global",
-            global_desc: "Conversor de divisas integrado con tipos en vivo para expatriados y negocios internacionales.",
-            view_multi_currency: "Ver Multidivisa →",
-            potential_headline: "El poder de la <br><span class=\"gold-text\">sinergia multiplataforma</span>",
-            unified_data_structure: "Estructura de Datos Unificada",
-            unified_data_desc: "Ambas apps usan motor JSON sincronizado. Exporta e importa al instante a tu Android localmente.",
-            no_subscription: "Sin Suscripción",
-            no_subscription_desc: "Donde otros cobran mensualmente, VBF BudgetPro es licencia única. Se amortiza en 6 meses.",
-            receipt_digitization: "Digitalización de Recibos",
-            receipt_digitization_desc: "Escanea recibos desde Android. Datos comprimidos se guardan en la base para auditoría PC.",
-            offline_privacy: "Privacidad offline",
-            currencies: "Divisas",
-            monthly_fees: "Comisiones mensuales",
-            full_exports: "Exportaciones completas",
-            obtaining_license: "Obtén tu <span class=\"gold-text\">licencia profesional</span>",
-            step1: "Enviar consulta",
-            step1_desc: "Elige plataforma y rellena el formulario.",
-            step2: "Pago seguro",
-            step2_desc: "Recibe enlace PayPal por mail para tu licencia.",
-            step3: "Entrega instantánea",
-            step3_desc: "Llave y enlace de descarga enviados al instante.",
-            request_license: "Solicita tu licencia",
-            request_license_desc: "Deja tus datos, respondemos en 24h.",
-            your_name: "Nombre",
-            email_address: "Correo electrónico",
-            target_platform: "Plataforma destino",
-            desktop_option: "BudgetPro Desktop (Electron - Win/macOS)",
-            android_option: "BudgetPro Mobile (Android APK)",
-            bundle_option: "Pack completo (Desktop + Mobile)",
-            additional_notes: "Notas adicionales",
-            send_inquiry: "ENVIAR CONSULTA",
-            footer: "&copy; 2024 VBF Software Solutions. Ingeniería profesional.",
-          },
-          pt: {
-            title: "BudgetPro",
-            features: "Recursos",
-            potential: "O Potencial",
-            licensing: "Licenciamento",
-            get_license: "Obter Licença",
-            hero_title: "Gestão de Patrimônio <br><span class=\"gold-text\">Profissional.</span>",
-            hero_desc: "Tenha controle total do seu capital com uma suíte de dois motores. Desenvolvido em <b>Electron</b> para análise desktop e <b>Android</b> para mobilidade.",
-            start_license: "Iniciar sua Licença",
-            explore_features: "Explorar Recursos",
-            availability: "Disponível para Windows, macOS & Android",
-            features_headline: "Ferramentas de Precisão",
-            features_prompt: "Clique em um cartão para ver a profundidade técnica do nosso ecossistema.",
-            advanced_analytics: "Análise Avançada",
-            analytics_desc: "Relatórios profissionais com tendências, divisão de categorias e previsões anuais.",
-            see_deep_dive: "Veja o Detalhe →",
-            privacy_architecture: "Arquitetura de Privacidade",
-            privacy_desc: "100% posse do banco de dados offline. Sem rastreio na nuvem. PIN e biometria padrão.",
-            security_specs: "Especificações de Segurança →",
-            global_engine: "Motor Global",
-            global_desc: "Conversor de moeda integrado com cotação ao vivo para expatriados e negócios internacionais.",
-            view_multi_currency: "Ver Multimoeda →",
-            potential_headline: "O poder da <br><span class=\"gold-text\">sinergia multiplataforma</span>",
-            unified_data_structure: "Estrutura de Dados Unificada",
-            unified_data_desc: "Ambos usam JSON sincronizado. Exporte e importe instantaneamente por transferência local.",
-            no_subscription: "Sem mensalidade",
-            no_subscription_desc: "Onde outros cobram mensalidade, BudgetPro tem licença única. Retorno em 6 meses.",
-            receipt_digitization: "Digitalização de Recibos",
-            receipt_digitization_desc: "Escaneie recibos pelo app Android. Imagem comprimida salva no banco para auditoria.",
-            offline_privacy: "Privacidade Off-line",
-            currencies: "Moedas",
-            monthly_fees: "Mensalidades",
-            full_exports: "Exportações completas",
-            obtaining_license: "Consiga sua <span class=\"gold-text\">licença profissional</span>",
-            step1: "Enviar solicitação",
-            step1_desc: "Escolha a plataforma e preencha o formulário.",
-            step2: "Pagamento seguro",
-            step2_desc: "Receba o link PayPal no email.",
-            step3: "Entrega instantânea",
-            step3_desc: "Chave e link enviados imediatamente.",
-            request_license: "Solicite sua licença",
-            request_license_desc: "Informe seus dados e receba resposta em 24h.",
-            your_name: "Seu nome",
-            email_address: "E-mail",
-            target_platform: "Plataforma",
-            desktop_option: "BudgetPro Desktop (Electron - Win/macOS)",
-            android_option: "BudgetPro Mobile (Android APK)",
-            bundle_option: "Pacote completo (Desktop + Mobile)",
-            additional_notes: "Observações",
-            send_inquiry: "ENVIAR SOLICITAÇÃO",
-            footer: "&copy; 2024 VBF Software Solutions. Engenharia Profissional.",
-          }
-        };
-
-        function setLanguage(lang) {
-          window.selectedLang = lang;
-          document.querySelectorAll('[data-i18n]').forEach(el => {
-            let key = el.getAttribute('data-i18n');
-            let html = translations[lang][key] !== undefined ? translations[lang][key] : translations['en'][key] || '';
-            if (html !== undefined) el.innerHTML = html;
-          });
-          document.documentElement.lang = lang;
-        }
-        // Default language
-        setLanguage((navigator.language || navigator.userLanguage || 'en').slice(0,2));
-    </script>
-    <script>
-        // Modal Details: Multilingual inner content per language
-        const modalDetails = {
-          analytics: {
-            en: {
-              title: "Deep Financial Insights",
-              icon: "📊",
-              content: `
-                <p class="text-gray-300 mb-6">BudgetPro uses a custom <b>Chart.js</b> implementation designed for high-density data.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Predictive Trends</h4>
-                    <p class="text-sm text-gray-400">The tool analyzes historical data to generate forecast lines, helping you visualize your net worth 12 months into the future.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Drill-Down Logic</h4>
-                    <p class="text-sm text-gray-400">Clicking on any chart segment instantly filters the underlying transaction journal, allowing for rapid audit of specific expenditures.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Professional Exports</h4>
-                    <p class="text-sm text-gray-400">Export clean, formatted XLSX files compatible with Excel and Google Sheets for tax reporting or secondary analysis.</p>
-                  </div>
-                </div>
-                `
-            },
-            fr: {
-              title: "Analyses Financières Approfondies",
-              icon: "📊",
-              content: `
-                <p class="text-gray-300 mb-6">BudgetPro utilise une implémentation Chart.js personnalisée pour des données à haute densité.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Tendance Prédictive</h4>
-                    <p class="text-sm text-gray-400">L’outil analyse l’historique pour prévoir votre valeur nette 12 mois à l’avance.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Audit instantané</h4>
-                    <p class="text-sm text-gray-400">Cliquez sur un segment du graphique pour filtrer le journal correspondant et auditer vos dépenses.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Exports professionnels</h4>
-                    <p class="text-sm text-gray-400">Exportez des fichiers XLSX propres et lisibles pour Excel ou Sheets, idéal pour fiscalité ou analyse.</p>
-                  </div>
-                </div>
-                `
-            },
-            de: {
-              title: "Tiefgreifende Finanzanalysen",
-              icon: "📊",
-              content: `
-                <p class="text-gray-300 mb-6">BudgetPro nutzt eine spezielle <b>Chart.js</b>-Implementierung für hochdichte Daten.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Vorhersagetrends</h4>
-                    <p class="text-sm text-gray-400">Das Tool analysiert Ihre Historie und stellt Prognoselinien für 12 Monate dar.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Drill-Down-Logik</h4>
-                    <p class="text-sm text-gray-400">Klicken Sie in das Diagramm, um das Protokoll für schnelle Prüfungen zu filtern.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Professioneller Export</h4>
-                    <p class="text-sm text-gray-400">Exportieren Sie saubere XLSX-Dateien für Steuer oder weitere Analysen.</p>
-                  </div>
-                </div>
-                `
-            },
-            es: {
-              title: "Análisis Financiero Profundo",
-              icon: "📊",
-              content: `
-                <p class="text-gray-300 mb-6">BudgetPro usa una implementación personalizada de <b>Chart.js</b> para datos densos.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Tendencias Predictivas</h4>
-                    <p class="text-sm text-gray-400">Analiza datos históricos y proyecta tus finanzas 12 meses adelante.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Lógica de Profundización</h4>
-                    <p class="text-sm text-gray-400">Al hacer clic en un segmento filtras al instante el diario de transacciones.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Exportaciones Profesionales</h4>
-                    <p class="text-sm text-gray-400">Exporta XLSX limpios compatibles con Excel y Sheets.</p>
-                  </div>
-                </div>
-                `
-            },
-            pt: {
-              title: "Insights Financeiros Profundos",
-              icon: "📊",
-              content: `
-                <p class="text-gray-300 mb-6">BudgetPro usa <b>Chart.js</b> personalizado para dados densos.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Tendências Preditivas</h4>
-                    <p class="text-sm text-gray-400">Analisa dados históricos e projeta seu patrimônio 12 meses à frente.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Lógica Drill-Down</h4>
-                    <p class="text-sm text-gray-400">Clique em um segmento e filtre o extrato para auditoria rápida.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Exportações Profissionais</h4>
-                    <p class="text-sm text-gray-400">Exporte XLSX limpos, compatíveis com Excel/Sheets.</p>
-                  </div>
-                </div>
-                `
-            }
-          },
-          security: {
-            en: {
-              title: "Security & Sovereignty",
-              icon: "🔐",
-              content: `
-                <p class="text-gray-300 mb-6">In an era of cloud data breaches, BudgetPro keeps your data where it belongs: <b>with you.</b></p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Local Encrypted Database</h4>
-                    <p class="text-sm text-gray-400">All data is stored in a structured JSON format on your local filesystem. No data is ever transmitted to VBF servers.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Hardware-Level Privacy</h4>
-                    <p class="text-sm text-gray-400">Supports native PIN-pad protection and biometric (Fingerprint/Face) authentication on compatible Android devices.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Encrypted Transfers</h4>
-                    <p class="text-sm text-gray-400">Backups can be password-protected, ensuring your financial history remains safe even during device migration.</p>
-                  </div>
-                </div>
-                `
-            },
-            fr: {
-              title: "Sécurité & Souveraineté",
-              icon: "🔐",
-              content: `
-                <p class="text-gray-300 mb-6">À l’ère des fuites dans le cloud, BudgetPro garde vos données là où elles doivent rester : <b>chez vous.</b></p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Base locale chiffrée</h4>
-                    <p class="text-sm text-gray-400">Toutes les données sont en JSON structuré dans votre propre système. Jamais transmises à VBF.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Vie privée matérielle</h4>
-                    <p class="text-sm text-gray-400">Soutien natif du PIN et biométrie (empreinte/visage) sur Android compatible.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Transferts chiffrés</h4>
-                    <p class="text-sm text-gray-400">Sauvegardes protégées par mot de passe, même lors d'une migration d’appareil.</p>
-                  </div>
-                </div>
-                `
-            },
-            de: {
-              title: "Sicherheit und Souveränität",
-              icon: "🔐",
-              content: `
-                <p class="text-gray-300 mb-6">In Zeiten von Cloud-Leaks bleiben Ihre Daten bei BudgetPro <b>bei Ihnen!</b></p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Lokale, verschlüsselte Datenbank</h4>
-                    <p class="text-sm text-gray-400">Alle Daten lokal als JSON gespeichert. Keine Übertragung an VBF.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Datenschutz auf Hardware-Ebene</h4>
-                    <p class="text-sm text-gray-400">PIN & Biometrie (Finger/Face) auf Android ab Werk unterstützt.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Verschlüsselte Übertragung</h4>
-                    <p class="text-sm text-gray-400">Backups können passwortgeschützt werden – sicher bei Gerätetausch.</p>
-                  </div>
-                </div>
-                `
-            },
-            es: {
-              title: "Seguridad & Soberanía",
-              icon: "🔐",
-              content: `
-                <p class="text-gray-300 mb-6">En tiempos de filtraciones cloud, BudgetPro mantiene tus datos <b>contigo.</b></p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Base de Datos Local Cifrada</h4>
-                    <p class="text-sm text-gray-400">Datos guardados en JSON estructurado local. Nunca se envía a VBF.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Privacidad por Hardware</h4>
-                    <p class="text-sm text-gray-400">PIN y biometría nativos (huella/cara) en Android compatible.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Transferencias Cifradas</h4>
-                    <p class="text-sm text-gray-400">Copias protegidas con contraseña, incluso durante migraciones.</p>
-                  </div>
-                </div>
-                `
-            },
-            pt: {
-              title: "Segurança & Soberania",
-              icon: "🔐",
-              content: `
-                <p class="text-gray-300 mb-6">Em tempos de vazamentos na nuvem, seus dados com BudgetPro ficam <b>com você</b>.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Banco de Dados Local Criptografado</h4>
-                    <p class="text-sm text-gray-400">Tudo em JSON no seu próprio sistema. Nunca enviado à VBF.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Privacidade de Hardware</h4>
-                    <p class="text-sm text-gray-400">Suporta PIN e biometria nativos (impressão/rosto) em dispositivos Android compatíveis.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Transferências Criptografadas</h4>
-                    <p class="text-sm text-gray-400">Backups protegidos por senha — seguro mesmo nas migrações.</p>
-                  </div>
-                </div>
-                `
-            }
-          },
-          currency: {
-            en: {
-              title: "The Multi-Currency Engine",
-              icon: "🌍",
-              content: `
-                <p class="text-gray-300 mb-6">Designed specifically for Digital Nomads, Expats, and Global Investors.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Real-Time FX Integration</h4>
-                    <p class="text-sm text-gray-400">Fetch live exchange rates for 150+ currencies with a single tap. Set your base currency and track the world.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Smart Wallet Linking</h4>
-                    <p class="text-sm text-gray-400">Link accounts in different currencies. The app automatically calculates conversions so your 'Net Worth' is always accurate in your home currency.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Travel Converter</h4>
-                    <p class="text-sm text-gray-400">Quick-access calculator to convert local prices while shopping abroad, using your specific wallet's rate.</p>
-                  </div>
-                </div>
-                `
-            },
-            fr: {
-              title: "Moteur Multi-Devises",
-              icon: "🌍",
-              content: `
-                <p class="text-gray-300 mb-6">Conçu pour digitals nomads, expatriés et investisseurs mondiaux.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Taux de change en direct</h4>
-                    <p class="text-sm text-gray-400">Obtenez les taux de 150+ devises instantanément. Définissez la devise de base pour tout suivre.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Portefeuilles Multi-Devise</h4>
-                    <p class="text-sm text-gray-400">Liez vos comptes dans différentes devises. Conversion automatique pour que votre patrimoine soit fidèle à votre devise.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Convertisseur Voyage</h4>
-                    <p class="text-sm text-gray-400">Calcul rapide pour convertir les prix locaux en voyage, selon votre propre taux.</p>
-                  </div>
-                </div>
-                `
-            },
-            de: {
-              title: "Multiwährungs-Engine",
-              icon: "🌍",
-              content: `
-                <p class="text-gray-300 mb-6">Speziell für digitale Nomaden, Expats & Investoren.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">FX-Integration live</h4>
-                    <p class="text-sm text-gray-400">Erhalte Kurse für 150+ Währungen, setze Heimatwährung & verfolge weltweit.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Smarte Wallet-Verknüpfung</h4>
-                    <p class="text-sm text-gray-400">Kopple Konten in diversen Währungen, automatische Umrechnung ins Heimatkonto.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Reisekonverter</h4>
-                    <p class="text-sm text-gray-400">Schnellrechner für lokale Preise auf Reisen mit persönlichem Kurs.</p>
-                  </div>
-                </div>
-                `
-            },
-            es: {
-              title: "Motor Multimoneda",
-              icon: "🌍",
-              content: `
-                <p class="text-gray-300 mb-6">Diseñado para nómadas digitales, expatriados e inversores globales.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Integración FX en Tiempo Real</h4>
-                    <p class="text-sm text-gray-400">Obtén cotizaciones de 150+ monedas al instante. Establece la base y monitorea el mundo.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Enlace Inteligente</h4>
-                    <p class="text-sm text-gray-400">Vincula cuentas en distintas monedas y convierte todo a tu base automáticamente.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Convertidor de Viaje</h4>
-                    <p class="text-sm text-gray-400">Calcula rápido el precio en tienda usando tu propio tipo de cambio.</p>
-                  </div>
-                </div>
-                `
-            },
-            pt: {
-              title: "Motor Multimoedas",
-              icon: "🌍",
-              content: `
-                <p class="text-gray-300 mb-6">Projetado para nômades digitais, expatriados e investidores globais.</p>
-                <div class="space-y-4">
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">FX em tempo real</h4>
-                    <p class="text-sm text-gray-400">Consulte 150+ moedas ao vivo. Defina sua moeda base e acompanhe onde estiver.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Vinculação Inteligente</h4>
-                    <p class="text-sm text-gray-400">Conecte contas em moedas diferentes. A conversão é automática para seu saldo base.</p>
-                  </div>
-                  <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                    <h4 class="gold-text font-bold mb-1">Conversor de Viagem</h4>
-                    <p class="text-sm text-gray-400">Converta preços no local rapidamente, usando seu próprio câmbio.</p>
-                  </div>
-                </div>
-                `
-            }
-          }
-        };
-
-        function openDetail(key) {
-            const lang = window.selectedLang || "en";
-            const data = (modalDetails[key][lang] !== undefined) ? modalDetails[key][lang] : modalDetails[key]['en'];
-            const container = document.getElementById('modalContent');
-            container.innerHTML = `
-                <div class="text-6xl mb-6">${data.icon}</div>
-                <h2 class="text-4xl font-extrabold mb-6 gold-text leading-tight">${data.title}</h2>
-                <div class="prose prose-invert max-w-none">${data.content}</div>
-                <button onclick="closeDetail()" class="mt-12 w-full py-4 rounded-2xl border border-yellow-500/20 hover:bg-yellow-500/10 transition gold-text font-bold uppercase tracking-widest">
-                  ${({
-                    en: "Return to Overview", fr: "Retour à l’aperçu", de: "Zur Übersicht", es: "Volver al resumen", pt: "Voltar à Visão Geral"
-                  })[lang] || "Return to Overview"}
-                </button>
-            `;
-            document.getElementById('detailModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDetail() {
-            document.getElementById('detailModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on escape key
-        document.onkeydown = function(evt) {
-            if (evt.key === "Escape") closeDetail();
-        };
-    </script>
 </body>
 </html>

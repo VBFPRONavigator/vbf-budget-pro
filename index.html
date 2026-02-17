@@ -23,6 +23,32 @@
         .screenshot-card img { transition: transform 0.5s ease; width: 100%; height: auto; display: block; }
         .screenshot-card:hover { border-color: var(--gold); transform: scale(1.02); z-index: 10; }
         .screenshot-card:hover img { transform: scale(1.1); }
+    /* Lightbox Styles */
+.screenshot-card { cursor: zoom-in; }
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+#lightbox-close {
+    position: absolute;
+    top: 30px; right: 30px;
+    color: white; font-size: 40px;
+    cursor: pointer; font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -111,16 +137,35 @@
     </section>
 
     <!-- SCREENSHOTS GRID -->
-    <section id="screenshots" class="max-w-7xl mx-auto px-6 py-24">
-        <h2 data-i18n="nav_screenshots" class="text-4xl font-black mb-12 gold-text text-center uppercase tracking-widest">Screenshots</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="screenshot-card"><img src="screenshot-2-budgets.png" alt="Budgets"></div>
-            <div class="screenshot-card"><img src="screenshot-3-reports.png" alt="Reports"></div>
-            <div class="screenshot-card"><img src="screenshot-4-privacy.png" alt="Privacy Mode"></div>
-            <div class="screenshot-card"><img src="screenshot-5-property.png" alt="Property Analysis"></div>
-            <div class="screenshot-card"><img src="screenshot-6-account-settings.png" alt="Account Settings"></div>
+<section id="screenshots" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 data-i18n="nav_screenshots" class="text-4xl font-black mb-12 gold-text text-center uppercase tracking-widest">Screenshots</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+        <!-- Dashboard -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-1-dashboard.png')">
+            <img src="screenshot-1-dashboard.png" alt="Dashboard">
         </div>
-    </section>
+        <!-- Budgets -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-2-budgets.png')">
+            <img src="screenshot-2-budgets.png" alt="Budgets">
+        </div>
+        <!-- Reports -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-3-reports.png')">
+            <img src="screenshot-3-reports.png" alt="Reports">
+        </div>
+        <!-- Privacy -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-4-privacy.png')">
+            <img src="screenshot-4-privacy.png" alt="Privacy Mode">
+        </div>
+        <!-- Property -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-5-property.png')">
+            <img src="screenshot-5-property.png" alt="Property Analysis">
+        </div>
+        <!-- Settings -->
+        <div class="screenshot-card" onclick="openLightbox('screenshot-6-account-settings.png')">
+            <img src="screenshot-6-account-settings.png" alt="Account Settings">
+        </div>
+    </div>
+</section>
    
     <!-- DOWNLOAD & LICENSE -->
     <section id="download" class="max-w-4xl mx-auto px-6 py-24">
@@ -261,5 +306,6 @@
     </script>
 </body>
 </html>
+
 
 

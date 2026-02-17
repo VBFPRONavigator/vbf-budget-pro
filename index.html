@@ -19,7 +19,7 @@
         .platform-badge { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); color: var(--gold); padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         
         /* Screenshot Zoom Effect */
-        .screenshot-card { overflow: hidden; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .screenshot-card { overflow: hidden; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; background: rgba(0,0,0,0.2); }
         .screenshot-card img { transition: transform 0.5s ease; width: 100%; height: auto; display: block; }
         .screenshot-card:hover { border-color: var(--gold); transform: scale(1.02); z-index: 10; }
         .screenshot-card:hover img { transform: scale(1.1); }
@@ -76,13 +76,12 @@
                 </p>
                 <div class="flex gap-4">
                     <a href="#download" data-i18n="btn_download" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl shadow-yellow-500/10">Download Now</a>
-                    <a href="#guide" data-i18n="btn_guide" class="px-8 py-4 rounded font-black uppercase text-sm border border-gold gold-text hover:bg-gold/10 transition">User Guide</a>
+                    <a href="#contact" data-i18n="nav_license" class="px-8 py-4 rounded font-black uppercase text-sm border border-gold gold-text hover:bg-gold/10 transition">License Inquiry</a>
                 </div>
             </div>
             <div class="animate__animated animate__fadeInRight relative">
                 <div class="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full"></div>
                 <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl">
-                    <!-- MAIN DASHBOARD SCREENSHOT -->
                     <img src="screenshot-main.png" alt="Dashboard Overview" class="rounded-xl border border-white/10 shadow-lg">
                 </div>
             </div>
@@ -90,9 +89,9 @@
     </header>
 
     <!-- CORE CAPABILITIES -->
-    <section id="features" class="max-w-7xl mx-auto px-6 py-24">
-        <h2 data-i18n="cap_title" class="text-4xl font-black mb-12 gold-text text-center uppercase tracking-widest">Core Capabilities</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+    <section id="features" class="max-w-7xl mx-auto px-6 py-24 text-center">
+        <h2 data-i18n="cap_title" class="text-4xl font-black mb-12 gold-text uppercase tracking-widest">Core Capabilities</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
             <div class="glass p-10 rounded-3xl card-hover transition-all">
                 <div class="text-4xl mb-6">✨</div>
                 <h4 data-i18n="f1_t" class="text-xl font-bold mb-4 gold-text">AI Smart Cleanup</h4>
@@ -115,12 +114,12 @@
     <section id="screenshots" class="max-w-7xl mx-auto px-6 py-24">
         <h2 data-i18n="nav_screenshots" class="text-4xl font-black mb-12 gold-text text-center uppercase tracking-widest">Screenshots</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="screenshot-card"><img src="assets/screenshot-1-dashboard.png" alt="Dashboard"></div>
-            <div class="screenshot-card"><img src="assets/screenshot-2-budgets.png" alt="Budgets"></div>
-            <div class="screenshot-card"><img src="assets/screenshot-3-reports.png" alt="Reports"></div>
-            <div class="screenshot-card"><img src="assets/screenshot-4-privacy.png" alt="Privacy Mode"></div>
-            <div class="screenshot-card"><img src="assets/screenshot-5-property.png" alt="Property Analysis"></div>
-            <div class="screenshot-card"><img src="assets/screenshot-6-account-settings.png" alt="Account Settings"></div>
+            <div class="screenshot-card"><img src="screenshot-1-dashboard.png" alt="Dashboard"></div>
+            <div class="screenshot-card"><img src="screenshot-2-budgets.png" alt="Budgets"></div>
+            <div class="screenshot-card"><img src="screenshot-3-reports.png" alt="Reports"></div>
+            <div class="screenshot-card"><img src="screenshot-4-privacy.png" alt="Privacy Mode"></div>
+            <div class="screenshot-card"><img src="screenshot-5-property.png" alt="Property Analysis"></div>
+            <div class="screenshot-card"><img src="screenshot-6-account-settings.png" alt="Account Settings"></div>
         </div>
     </section>
    
@@ -145,7 +144,7 @@
                 </div>
                 <div class="bg-white/5 p-6 rounded-2xl">
                     <h4 class="font-bold mb-2 gold-text">System Requirements</h4>
-                    <p class="text-xs text-gray-500">Windows 10+, Linux (Ubuntu/Debian), or Android Tablet (v9.0+). Minimum 4GB RAM recommended for AI features.</p>
+                    <p class="text-xs text-gray-500 italic">Windows 10+, Linux (Ubuntu/Debian), or Android Tablet (v9.0+). Minimum 4GB RAM recommended for AI features.</p>
                 </div>
             </div>
         </div>
@@ -160,8 +159,8 @@
             </div>
             <form action="https://formspree.io/f/your_id" method="POST" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition text-white">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition text-white">
+                    <input type="text" name="name" data-i18n-ph="ph_name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition text-white">
+                    <input type="email" name="email" data-i18n-ph="ph_email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition text-white">
                 </div>
                 <select name="platform" class="w-full bg-slate-900 border border-white/10 rounded-lg p-4 outline-none focus:border-yellow-600 transition text-white">
                     <option value="desktop">Electron (Windows/Linux)</option>
@@ -186,27 +185,67 @@
                 nav_capabilities: "Capabilities", nav_screenshots: "Screenshots", nav_download: "Download", nav_license: "License",
                 btn_get_license: "Get License", hero_t1: "Sovereign", hero_t2: "Wealth Tracking.",
                 hero_desc: "The definitive financial and property dashboard. Engineered for Electron and Android, providing deep asset analysis, property equity tracking, and AI-driven categorization.",
-                btn_download: "Download Now", btn_guide: "User Guide", cap_title: "Core Capabilities",
+                btn_download: "Download Now", cap_title: "Core Capabilities",
                 f1_t: "AI Smart Cleanup", f1_d: "Intelligent categorization engine that audits historical transactions and suggests professional groupings.",
                 f2_t: "Property Financials", f2_d: "Deep property analysis including Mortgage Balance, Equity Tracking, LTV calculations, and Investment ROI.",
                 f3_t: "Wealth Forecast", f3_d: "A 5-year sovereign wealth engine based on current savings velocity and property appreciation factors.",
                 dl_title: "Download & Activate", dl_desc: "Get started with VBF BudgetPro. Download the latest version and activate with your professional license key.",
                 dl_how: "How to Activate", dl_s1: "Install and launch the VBF Navigator.", dl_s2: "Navigate to Settings > License.", dl_s3: "Paste your unique key and click Activate.",
-                form_title: "License Inquiry", form_subtitle: "Obtain your professional lifetime activation key.", btn_submit: "Request Activation"
+                form_title: "License Inquiry", form_subtitle: "Obtain your professional lifetime activation key.", btn_submit: "Request Activation",
+                ph_name: "Full Name", ph_email: "Email Address"
             },
             fr: {
                 nav_capabilities: "Fonctions", nav_screenshots: "Captures", nav_download: "Télécharger", nav_license: "Licence",
                 btn_get_license: "Licence Pro", hero_t1: "Souveraineté", hero_t2: "Financière.",
                 hero_desc: "Le tableau de bord financier et immobilier définitif. Conçu pour Electron et Android, offrant une analyse approfondie et une catégorisation par IA.",
-                btn_download: "Télécharger", btn_guide: "Guide", cap_title: "Capacités Clés",
+                btn_download: "Télécharger", cap_title: "Capacités Clés",
                 f1_t: "Nettoyage IA", f1_d: "Moteur de catégorisation intelligent qui audite les transactions et suggère des groupements pro.",
                 f2_t: "Immobilier", f2_d: "Analyse immobilière incluant le solde hypothécaire, le suivi de l'équité et les calculs LTV.",
                 f3_t: "Prévision Fortune", f3_d: "Un moteur de richesse sur 5 ans basé sur la vitesse d'épargne actuelle et l'appréciation des biens.",
                 dl_title: "Télécharger & Activer", dl_desc: "Commencez avec VBF BudgetPro. Téléchargez la dernière version et activez votre licence.",
                 dl_how: "Comment Activer", dl_s1: "Installez et lancez VBF Navigator.", dl_s2: "Allez dans Paramètres > Licence.", dl_s3: "Collez votre clé et cliquez sur Activer.",
-                form_title: "Demande de Licence", form_subtitle: "Obtenez votre clé d'activation professionnelle à vie.", btn_submit: "Demander Activation"
+                form_title: "Demande de Licence", form_subtitle: "Obtenez votre clé d'activation professionnelle à vie.", btn_submit: "Demander Activation",
+                ph_name: "Nom Complet", ph_email: "Adresse Email"
+            },
+            es: {
+                nav_capabilities: "Capacidades", nav_screenshots: "Capturas", nav_download: "Descargar", nav_license: "Licencia",
+                btn_get_license: "Licencia Pro", hero_t1: "Soberanía", hero_t2: "Financiera.",
+                hero_desc: "El panel financiero y de propiedad definitivo. Diseñado para Electron y Android, con análisis profundo de activos y categorización por IA.",
+                btn_download: "Descargar Ahora", cap_title: "Capacidades Clave",
+                f1_t: "Limpieza por IA", f1_d: "Motor inteligente que audita transacciones y sugiere agrupaciones profesionales.",
+                f2_t: "Finanzas Propiedad", f2_d: "Análisis inmobiliario profundo incluyendo saldo hipotecario, capital y cálculos LTV.",
+                f3_t: "Pronóstico Riqueza", f3_d: "Motor de riqueza a 5 años basado en el ahorro actual y la apreciación de activos.",
+                dl_title: "Descargar y Activar", dl_desc: "Comience con VBF BudgetPro. Descargue la última versión y active con su clave profesional.",
+                dl_how: "Cómo Activar", dl_s1: "Instale y ejecute VBF Navigator.", dl_s2: "Vaya a Configuración > Licencia.", dl_s3: "Pegue su clave y haga clic en Activar.",
+                form_title: "Consulta de Licencia", form_subtitle: "Obtenga su clave de activación profesional de por vida.", btn_submit: "Solicitar Activación",
+                ph_name: "Nombre Completo", ph_email: "Correo Electrónico"
+            },
+            pt: {
+                nav_capabilities: "Recursos", nav_screenshots: "Capturas", nav_download: "Descarregar", nav_license: "Licença",
+                btn_get_license: "Obter Licença", hero_t1: "Soberania", hero_t2: "Financeira.",
+                hero_desc: "O painel financeiro e imobiliário definitivo. Projetado para Electron e Android, fornecendo análise profunda de ativos.",
+                btn_download: "Descarregar Agora", cap_title: "Recursos Principais",
+                f1_t: "Limpeza por IA", f1_d: "Motor de categorização inteligente que audita transações e sugere grupos pro.",
+                f2_t: "Finanças Imobiliárias", f2_d: "Análise profunda de propriedades incluindo saldo de hipoteca e rastreio de capital.",
+                f3_t: "Previsão de Riqueza", f3_d: "Motor de riqueza soberana a 5 anos baseado na poupança e valorização de ativos.",
+                dl_title: "Descarregar e Ativar", dl_desc: "Comece com o VBF BudgetPro. Descarregue a versão mais recente e ative a sua licença.",
+                dl_how: "Como Ativar", dl_s1: "Instale e inicie o VBF Navigator.", dl_s2: "Vá para Configurações > Licença.", dl_s3: "Cole a sua chave e clique em Ativar.",
+                form_title: "Pedido de Licença", form_subtitle: "Obtenha a sua chave de ativação profissional vitalícia.", btn_submit: "Pedir Ativação",
+                ph_name: "Nome Completo", ph_email: "Endereço de E-mail"
+            },
+            de: {
+                nav_capabilities: "Kapazitäten", nav_screenshots: "Screenshots", nav_download: "Download", nav_license: "Lizenz",
+                btn_get_license: "Lizenz Holen", hero_t1: "Souveränes", hero_t2: "Vermögen.",
+                hero_desc: "Das definitive Finanz- und Immobiliendashboard. Entwickelt für Electron und Android, mit tiefer Asset-Analyse.",
+                btn_download: "Jetzt Herunterladen", cap_title: "Kernfunktionen",
+                f1_t: "KI-Smart-Cleanup", f1_d: "Intelligente Kategorisierungs-Engine, die Transaktionen prüft und Gruppen vorschlägt.",
+                f2_t: "Immobilienfinanzen", f2_d: "Tiefe Immobilienanalyse einschließlich Hypothekensaldo, Eigenkapital und LTV-Berechnungen.",
+                f3_t: "Vermögensprognose", f3_d: "Eine 5-Jahres-Wohlstandsprognose basierend auf Sparrate und Wertsteigerung.",
+                dl_title: "Download & Aktivieren", dl_desc: "Starten Sie mit VBF BudgetPro. Laden Sie die Version herunter und aktivieren Sie Ihre Lizenz.",
+                dl_how: "Aktivierung", dl_s1: "VBF Navigator installieren und starten.", dl_s2: "Gehen Sie zu Einstellungen > Lizenz.", dl_s3: "Schlüssel einfügen und auf Aktivieren klicken.",
+                form_title: "Lizenzanfrage", form_subtitle: "Erhalten Sie Ihren lebenslangen Aktivierungsschlüssel.", btn_submit: "Aktivierung Anfordern",
+                ph_name: "Vollständiger Name", ph_email: "E-Mail-Adresse"
             }
-            // Add ES, PT, DE here following the same pattern
         };
 
         function updateLanguage(lang) {
@@ -214,6 +253,10 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (data[key]) el.innerText = data[key];
+            });
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (data[key]) el.placeholder = data[key];
             });
         }
     </script>

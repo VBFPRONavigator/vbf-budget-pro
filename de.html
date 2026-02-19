@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VBF BudgetPro Navigator | Souveraineté Financière</title>
+  <title>VBF BudgetPro Navigator | Finanzielle Souveränität</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -39,18 +39,18 @@
       </div>
       <div class="flex items-center gap-4 sm:gap-6">
         <select onchange="location = this.value;" class="bg-white/5 border border-white/10 text-[10px] font-bold uppercase gold-text px-2 py-1 rounded outline-none cursor-pointer">
-          <option value="fr.html" selected>FR</option>
+          <option value="de.html" selected>DE</option>
           <option value="index.html">EN</option>
-          <option value="de.html">DE</option>
+          <option value="fr.html">FR</option>
           <option value="es.html">ES</option>
           <option value="pt.html">PT</option>
         </select>
         <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-          <a href="#features" class="hover:text-white transition">Capacités</a>
-          <a href="#pillars" class="hover:text-white transition">Piliers</a>
+          <a href="#features" class="hover:text-white transition">Fähigkeiten</a>
+          <a href="#pillars" class="hover:text-white transition">Säulen</a>
           <a href="#screenshots" class="hover:text-white transition">Galerie</a>
         </div>
-        <a href="#license" class="px-5 py-2 gold-bg text-black rounded font-black text-[11px] uppercase hover:scale-105 transition">LICENCE</a>
+        <a href="#license" class="px-5 py-2 gold-bg text-black rounded font-black text-[11px] uppercase hover:scale-105 transition">LIZENZ</a>
       </div>
     </div>
   </nav>
@@ -64,14 +64,14 @@
           <span class="platform-badge opacity-50 grayscale cursor-not-allowed">Linux (WIP)</span>
         </div>
         <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">
-          Arrêtez de suivre le passé.<br>
-          <span class="gold-text">Pilotez votre avenir.</span>
+          Hör auf, die Vergangenheit zu verfolgen.<br>
+          <span class="gold-text">Gestalte deine Zukunft.</span>
         </h1>
         <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
-          Le tableau de bord ultime pour une souveraineté financière totale. <b>VBF BudgetPro Navigator</b> vous montre la croissance de votre patrimoine.
+          Das ultimative Dashboard für totale finanzielle Souveränität. <b>VBF BudgetPro Navigator</b> zeigt Ihnen das Wachstum Ihres Vermögens.
         </p>
         <div class="flex gap-4">
-          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition">Commencer</a>
+          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition">Starten</a>
         </div>
       </div>
       <div class="animate__animated animate__fadeInRight relative">
@@ -83,103 +83,89 @@
     </div>
   </header>
 
-  <!-- CAPACITÉS -->
+  <!-- FÄHIGKEITEN -->
   <section id="features" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Capacités du système</h2>
+    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">System-Fähigkeiten</h2>
     <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
-      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Moteur central</button>
-      <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Richesse Intel</button>
-      <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Souveraineté</button>
-      <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Légal</button>
+      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Kern-Engine</button>
+      <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Vermögens-Intel</button>
+      <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Souveränität</button>
+      <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Rechtliches</button>
     </div>
 
     <div id="engine" class="tab-content active animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Réconciliation haute vitesse</h3><p class="text-gray-300">Traitez des années de transactions en quelques secondes. Synchronisez plusieurs comptes et cartes de manière unifiée sans dépendance au cloud.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs"><span class="gold-text">SYNC :</span> EN LIGNE<br><span class="gold-text">DEVISES :</span> EUR, USD, MAD<br><span class="gold-text">CHIFFREMENT :</span> AES-256</div>
+        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Hochgeschwindigkeits-Abgleich</h3><p class="text-gray-300">Verarbeiten Sie jahrelange Transaktionen in Sekunden. Synchronisieren Sie mehrere Konten und Karten einheitlich ohne Cloud-Abhängigkeit.</p></div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs"><span class="gold-text">SYNC:</span> ONLINE<br><span class="gold-text">WÄHRUNG:</span> EUR, USD, MAD<br><span class="gold-text">VERSCHLÜSSELUNG:</span> AES-256</div>
       </div>
     </div>
 
-    <div id="wealth" class="tab-content animate__animated animate__fadeIn">
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Vélocité immobilière</h3><p class="text-gray-300">Suivez l'équité et l'appréciation. Visualisez exactement quand vos investissements deviennent des actifs de pur profit.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10"><span class="text-5xl font-black gold-text">2030</span><p class="text-[10px] uppercase tracking-[0.3em] mt-2">Horizon de liberté</p></div>
-      </div>
-    </div>
-
-    <div id="privacy" class="tab-content animate__animated animate__fadeIn">
-      <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Zéro connaissance</h3><p class="text-gray-300">Les données ne quittent jamais votre matériel. Le chiffrement local signifie aucune fuite et aucun suivi.</p></div>
-        <div class="flex justify-center"><div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div></div>
-      </div>
-    </div>
-
-    <!-- LEGAL TAB (FRANÇAIS COMPLET) -->
+    <!-- LEGAL TAB (DEUTSCH KOMPLETT) -->
     <div id="legal" class="tab-content animate__animated animate__fadeIn">
       <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
-        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Politique de Confidentialité</h3>
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Datenschutzrichtlinie</h3>
         <div class="legal-scroll max-h-[500px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
-          <p><strong>Date d'effet :</strong> 25 janvier 2026<br><strong>Dernière mise à jour :</strong> 25 janvier 2026</p>
+          <p><strong>Gültig ab:</strong> 25. Januar 2026<br><strong>Zuletzt aktualisiert:</strong> 25. Januar 2026</p>
           
-          <h4 class="text-lg font-bold gold-text">Aperçu</h4>
-          <p>BudgetPro Navigator s'engage à protéger votre vie privée. Cette politique de confidentialité explique nos pratiques en matière de données pour l'application de bureau BudgetPro Navigator ("l'App").</p>
+          <h4 class="text-lg font-bold gold-text">Überblick</h4>
+          <p>BudgetPro Navigator verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Datenschutzrichtlinie erläutert unsere Datenpraktiken für die BudgetPro Navigator Desktop-Anwendung („die App“).</p>
 
-          <h4 class="text-lg font-bold gold-text">Stockage des données</h4>
-          <p><strong>Toutes les données sont stockées localement sur votre appareil.</strong> BudgetPro Navigator ne réalise aucune des actions suivantes :</p>
+          <h4 class="text-lg font-bold gold-text">Datenspeicherung</h4>
+          <p><strong>Alle Daten werden lokal auf Ihrem Gerät gespeichert.</strong> BudgetPro Navigator führt folgende Aktionen NICHT aus:</p>
           <ul class="list-disc ml-5">
-            <li>Envoi de données vers des serveurs externes</li>
-            <li>Téléchargement d'informations vers le cloud</li>
-            <li>Transmission de vos données financières via Internet</li>
-            <li>Partage de vos informations avec des tiers</li>
+            <li>Senden von Daten an externe Server</li>
+            <li>Hochladen von Informationen in die Cloud</li>
+            <li>Übertragung Ihrer Finanzdaten über das Internet</li>
+            <li>Weitergabe Ihrer Informationen an Dritte</li>
           </ul>
 
-          <h4 class="text-lg font-bold gold-text">Collecte de données</h4>
-          <p><strong>Nous ne collectons AUCUNE donnée.</strong> L'App fonctionne entièrement hors ligne et ne collecte, ne transmet ni ne stocke aucune information utilisateur en dehors de votre appareil local.</p>
+          <h4 class="text-lg font-bold gold-text">Datenerfassung</h4>
+          <p><strong>Wir erfassen KEINE Daten.</strong> Die App arbeitet vollständig offline und erfasst, überträgt oder speichert keine Benutzerinformationen außerhalb Ihres lokalen Geräts.</p>
           
-          <h5 class="font-bold">Ce que nous ne collectons pas :</h5>
+          <h5 class="font-bold">Was wir nicht erfassen:</h5>
           <ul class="list-disc ml-5">
-            <li>Informations personnelles (nom, email, numéro de téléphone)</li>
-            <li>Identifiants de comptes financiers</li>
-            <li>Données de transaction</li>
-            <li>Données de localisation</li>
-            <li>Analyses d'utilisation</li>
-            <li>Rapports de plantage</li>
-            <li>Données de télémétrie</li>
+            <li>Persönliche Informationen (Name, E-Mail, Telefonnummer)</li>
+            <li>Zugangsdaten für Finanzkonten</li>
+            <li>Transaktionsdaten</li>
+            <li>Standortdaten</li>
+            <li>Nutzungsanalysen</li>
+            <li>Absturzberichte</li>
+            <li>Telemetriedaten</li>
           </ul>
 
-          <h4 class="text-lg font-bold gold-text">Sécurité des données</h4>
-          <p>Vos données financières sont protégées par :</p>
+          <h4 class="text-lg font-bold gold-text">Datensicherheit</h4>
+          <p>Ihre Finanzdaten werden geschützt durch:</p>
           <ul class="list-disc ml-5">
-            <li><strong>Stockage local uniquement</strong> : Toutes les données restent sur votre appareil sous forme chiffrée.</li>
-            <li><strong>Aucune dépendance à Internet</strong> : L'App fonctionne complètement hors ligne.</li>
-            <li><strong>Aucun accès tiers</strong> : Aucun service externe ou API n'a accès à vos données.</li>
-            <li><strong>Contrôle de l'utilisateur</strong> : Vous avez un contrôle total sur vos données et pouvez les supprimer à tout moment.</li>
+            <li><strong>Nur lokale Speicherung</strong>: Alle Daten verbleiben in verschlüsselter Form auf Ihrem Gerät.</li>
+            <li><strong>Keine Internetabhängigkeit</strong>: Die App funktioniert komplett offline.</li>
+            <li><strong>Kein Zugriff durch Dritte</strong>: Keine externen Dienste oder APIs haben Zugriff auf Ihre Daten.</li>
+            <li><strong>Benutzerkontrolle</strong>: Sie haben die vollständige Kontrolle über Ihre Daten und können diese jederzeit löschen.</li>
           </ul>
 
-          <h4 class="text-lg font-bold gold-text">Droits de l'utilisateur</h4>
+          <h4 class="text-lg font-bold gold-text">Nutzerrechte</h4>
           <ul class="list-disc ml-5">
-            <li><strong>Accès</strong> : Consultez toutes vos données dans l'App à tout moment.</li>
-            <li><strong>Exportation</strong> : Créez des sauvegardes à l'aide de la fonction intégrée.</li>
-            <li><strong>Suppression</strong> : Supprimez toutes les données en désinstallant l'App ou via la fonction "Effacer toutes les données".</li>
-            <li><strong>Contrôle</strong> : Gérez tous les aspects de vos informations financières sans surveillance externe.</li>
+            <li><strong>Zugriff</strong>: Sehen Sie jederzeit alle Ihre Daten in der App ein.</li>
+            <li><strong>Exportieren</strong>: Erstellen Sie Backups mit der integrierten Funktion.</li>
+            <li><strong>Löschen</strong>: Löschen Sie alle Daten durch Deinstallation der App oder die Funktion „Alle Daten löschen“.</li>
+            <li><strong>Kontrolle</strong>: Verwalten Sie alle Aspekte Ihrer Finanzinformationen ohne externe Aufsicht.</li>
           </ul>
 
-          <h4 class="text-lg font-bold gold-text">Services tiers</h4>
-          <p><strong>Nous n'utilisons AUCUN service tiers.</strong> L'App n'inclut pas d'outils d'analyse, de réseaux publicitaires, ne se connecte pas aux réseaux sociaux ni aux services de stockage cloud.</p>
+          <h4 class="text-lg font-bold gold-text">Dienste von Drittanbietern</h4>
+          <p><strong>Wir nutzen KEINE Dienste von Drittanbietern.</strong> Die App enthält keine Analyse-Tools, Werbenetzwerke, verbindet sich nicht mit sozialen Medien oder Cloud-Speicherdiensten.</p>
 
-          <h4 class="text-lg font-bold gold-text">Confidentialité des enfants</h4>
-          <p>L'App est conçue pour les adultes. Nous ne collectons sciemment aucune information auprès d'enfants de moins de 13 ans.</p>
+          <h4 class="text-lg font-bold gold-text">Privatsphäre von Kindern</h4>
+          <p>Die App ist für Erwachsene konzipiert. Wir erfassen wissentlich keine Informationen von Kindern unter 13 Jahren.</p>
 
-          <h4 class="text-lg font-bold gold-text">Notification de violation de données</h4>
-          <p>Puisqu'aucune donnée n'est transmise ou stockée hors de votre appareil, il n'y a aucun risque de violation de données depuis nos serveurs.</p>
+          <h4 class="text-lg font-bold gold-text">Benachrichtigung über Datenschutzverletzungen</h4>
+          <p>Da keine Daten außerhalb Ihres Geräts übertragen oder gespeichert werden, besteht kein Risiko einer Datenschutzverletzung von unseren Servern aus.</p>
 
-          <h4 class="text-lg font-bold gold-text">Informations de contact</h4>
-          <p>Email : <strong>contact@vbfpro.com</strong><br>Développeur : <strong>VBF PRO</strong></p>
+          <h4 class="text-lg font-bold gold-text">Kontaktinformationen</h4>
+          <p>E-Mail: <strong>usethis1234@proton.me</strong><br>Entwickler: <strong>VBF PRO</strong></p>
 
-          <h4 class="text-lg font-bold gold-text">Conformité</h4>
-          <p>Conforme au RGPD, CCPA, COPPA et aux politiques du Windows Store.</p>
+          <h4 class="text-lg font-bold gold-text">Einhaltung gesetzlicher Vorschriften</h4>
+          <p>Entspricht DSGVO, CCPA, COPPA und den Windows Store Content Policies.</p>
 
-          <p class="text-gold font-bold">Résumé : Vos données financières sont à vous seul. Nous ne les voyons pas, nous ne les stockons pas et nous ne les partageons pas.</p>
+          <p class="text-gold font-bold">Zusammenfassung: Ihre Finanzdaten gehören Ihnen allein. Wir sehen sie nicht, wir speichern sie nicht und wir geben sie nicht weiter.</p>
         </div>
       </div>
     </div>
@@ -187,40 +173,40 @@
 
   <!-- PILLARS -->
   <section id="pillars" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Piliers du Navigator</h2>
+    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Säulen des Navigator</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibilité</h3><p class="text-sm text-gray-400">Tableau de bord unifié pour toutes les cartes et banques.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Intelligence</h3><p class="text-sm text-gray-400">Nettoyage des transactions et projections par IA.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Contrôle</h3><p class="text-sm text-gray-400">Suivi du ratio prêt-valeur et prévisions d'appréciation.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Sichtbarkeit</h3><p class="text-sm text-gray-400">Einheitliches Dashboard für alle Karten und Banken.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Intelligenz</h3><p class="text-sm text-gray-400">KI-gestützte Bereinigung und Projektionen.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Kontrolle</h3><p class="text-sm text-gray-400">Beleihungsauslauf-Monitoring und Wertsteigerungsprognosen.</p></div>
     </div>
   </section>
 
   <!-- GALLERY -->
   <section id="screenshots" class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Tour visuel</h2>
+    <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Visuelle Tour</h2>
     <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-1-dashboard.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Tableau de bord</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-1-dashboard.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Dashboard</span></div>
       <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-2-budgets.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Budgets</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-3-reports.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Rapports</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-4-privacy.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">04. Vie privée</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-5-property.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">05. Actifs</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-6-account-settings.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">06. Paramètres</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-3-reports.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Berichte</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-4-privacy.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">04. Privatsphäre</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-5-property.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">05. Vermögenswerte</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-6-account-settings.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">06. Einstellungen</span></div>
     </div>
   </section>
 
   <!-- CTA -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-4xl font-black mb-6 gold-text uppercase">Prêt pour la navigation ?</h2>
-    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 hover:bg-yellow-500 transition shadow-xl">Télécharger pour Windows</a>
+    <h2 class="text-4xl font-black mb-6 gold-text uppercase">Bereit zur Navigation?</h2>
+    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 hover:bg-yellow-500 transition shadow-xl">Download für Windows</a>
     <div id="license" class="glass p-12 rounded-[3rem] text-left">
-      <h3 class="text-2xl font-black mb-6 gold-text uppercase">Demande de licence</h3>
+      <h3 class="text-2xl font-black mb-6 gold-text uppercase">Lizenzanfrage</h3>
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
         <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Nom" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
           <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
         </div>
-        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Demander la clé</button>
+        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Schlüssel anfordern</button>
       </form>
     </div>
   </section>

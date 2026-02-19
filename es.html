@@ -16,10 +16,12 @@
     .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
     .card-hover:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7); }
     .platform-badge { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); color: var(--gold); padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .tab-btn { border-bottom: 2px solid transparent; color: #94a3b8; cursor: pointer; }
     .tab-btn.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
+
     .legal-scroll::-webkit-scrollbar { width: 4px; }
     .legal-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     .legal-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
@@ -27,6 +29,7 @@
 </head>
 <body>
 
+  <!-- NAVEGACIÓN -->
   <nav class="fixed w-full top-0 z-50 glass border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-4">
@@ -37,7 +40,8 @@
         </div>
       </div>
       <div class="flex items-center gap-4 sm:gap-6">
-        <select onchange="location = this.value;" class="bg-white/5 border border-white/10 text-[10px] font-bold uppercase gold-text px-2 py-1 rounded cursor-pointer">
+        <!-- SELECTOR DE IDIOMA -->
+        <select onchange="location = this.value;" class="bg-white/5 border border-white/10 text-[10px] font-bold uppercase gold-text px-2 py-1 rounded outline-none cursor-pointer">
           <option value="es.html" selected>ES</option>
           <option value="index.html">EN</option>
           <option value="fr.html">FR</option>
@@ -54,25 +58,43 @@
     </div>
   </nav>
 
+  <!-- SECCIÓN HERO -->
   <header class="pt-32 pb-32 px-6 hero-gradient relative">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
       <div class="animate__animated animate__fadeInLeft">
-        <div class="flex gap-2 mb-6"><span class="platform-badge">Windows</span></div>
-        <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">Deja de rastrear el pasado.<br><span class="gold-text">Diseña tu futuro.</span></h1>
-        <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">El panel definitivo para la soberanía financiera total. <b>VBF BudgetPro Navigator</b> le muestra precisamente dónde está creciendo su riqueza.</p>
-        <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl">Comenzar</a>
+        <div class="flex gap-2 mb-6">
+          <span class="platform-badge">Windows</span>
+          <span class="platform-badge opacity-50 grayscale cursor-not-allowed" title="Próximamente">Linux (WIP)</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">
+          Deja de rastrear el pasado.<br>
+          <span class="gold-text">Diseña tu futuro.</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
+          El panel definitivo para la soberanía financiera total. Gestionar sus cuentas no debería ser un segundo trabajo. <b>VBF BudgetPro Navigator</b> le muestra exactamente dónde está creciendo su riqueza.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition w-full sm:w-auto text-center">
+            Iniciar prueba gratuita de 7 días
+          </a>
+          <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold italic">No se requiere tarjeta de crédito</span>
+        </div>
       </div>
+
       <div class="animate__animated animate__fadeInRight relative">
         <div class="absolute inset-0 bg-yellow-500/20 blur-[100px] rounded-full"></div>
         <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl min-h-[300px] flex items-center justify-center">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" class="rounded-2xl border border-gold w-full h-auto">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
+               alt="App Screenshot" class="rounded-2xl border border-gold w-full h-auto">
         </div>
       </div>
     </div>
   </header>
 
+  <!-- CAPACIDADES DEL SISTEMA (PESTAÑAS) -->
   <section id="features" class="max-w-5xl mx-auto px-6 py-20">
     <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Capacidades del Sistema</h2>
+    
     <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
       <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Motor Core</button>
       <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Riqueza Intel</button>
@@ -80,99 +102,192 @@
       <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Legal</button>
     </div>
 
+    <!-- Pestaña Engine -->
     <div id="engine" class="tab-content active animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Conciliación de alta velocidad</h3><p class="text-gray-300">Procese años de transacciones en segundos. Sincronice múltiples cuentas y tarjetas VISA de forma unificada sin ninguna dependencia de la nube.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs"><span class="gold-text">SYNC:</span> OPERATIVO<br><span class="gold-text">DIVISAS:</span> EUR, USD, MAD, GBP<br><span class="gold-text">ENCRIPTACIÓN:</span> AES-256 LOCAL</div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Conciliación de alta velocidad</h3>
+          <p class="text-gray-300">Procese años de transacciones en segundos. Sincronice múltiples cuentas y tarjetas VISA de forma unificada sin dependencia de la nube ni suscripciones mensuales.</p>
+        </div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs text-center">
+            <span class="gold-text">ESTADO SYNC:</span> OPERATIVO<br>
+            <span class="gold-text">DIVISAS:</span> EUR, USD, MAD, GBP<br>
+            <span class="gold-text">ENCRIPTACIÓN:</span> AES-256 LOCAL
+        </div>
       </div>
     </div>
 
+    <!-- Pestaña Wealth -->
     <div id="wealth" class="tab-content animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Velocidad Inmobiliaria</h3><p class="text-gray-300">Rastree el capital, la apreciación y los puntos de equilibrio. Vea exactamente cuándo sus inversiones se convierten en activos de puro beneficio.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10"><span class="text-5xl font-black gold-text">2030</span><p class="text-[10px] uppercase tracking-[0.3em] mt-2">Horizonte de Libertad</p></div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Velocidad Inmobiliaria</h3>
+          <p class="text-gray-300">Rastree el capital, la apreciación y los puntos de equilibrio. Visualice exactamente cuándo sus inversiones se convierten en activos de puro beneficio para su plan 2030.</p>
+        </div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10">
+            <span class="text-5xl font-black gold-text">2030</span>
+            <p class="text-[10px] uppercase tracking-[0.3em] mt-2">Horizonte de Libertad</p>
+        </div>
       </div>
     </div>
 
+    <!-- Pestaña Sovereignty -->
     <div id="privacy" class="tab-content animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Zéro-Conocimiento</h3><p class="text-gray-300">Sus datos nunca salen de su hardware. El cifrado local-first garantiza que no haya filtraciones ni vigilancia corporativa.</p></div>
-        <div class="flex justify-center"><div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div></div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Almacenamiento Cero-Conocimiento</h3>
+          <p class="text-gray-300">Su historial financiero nunca sale de su hardware. El cifrado local-first significa cero rastreo, cero fugas en la nube y cero vigilancia corporativa.</p>
+        </div>
+        <div class="flex justify-center">
+            <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div>
+        </div>
       </div>
     </div>
 
+    <!-- PESTAÑA LEGAL (COMPLETA ESPAÑOL) -->
     <div id="legal" class="tab-content animate__animated animate__fadeIn">
       <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
-        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Política de Privacidad</h3>
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Política de Privacidad y Licencia</h3>
         <div class="legal-scroll max-h-[500px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
-          <p><strong>Fecha de vigencia:</strong> 25 de enero de 2026</p>
-          <h4 class="text-lg font-bold gold-text">1. Descripción general</h4>
-          <p>BudgetPro Navigator protege su privacidad. Esta política explica nuestras prácticas de datos para la aplicación de escritorio.</p>
-          <h4 class="text-lg font-bold gold-text">2. Almacenamiento de datos</h4>
-          <p><strong>Todos los datos se almacenan localmente.</strong> No enviamos datos a servidores externos, no los subimos a la nube ni los compartimos con terceros.</p>
-          <h4 class="text-lg font-bold gold-text">3. Recopilación de datos</h4>
-          <p><strong>Recopilamos CERO datos.</strong> La App funciona offline. No recopilamos nombres, correos electrónicos ni credenciales financieras.</p>
-          <h5 class="font-bold">Lo que no recopilamos:</h5>
-          <ul class="list-disc ml-5">
-            <li>Información personal, credenciales, transacciones, ubicación, analíticas, informes de errores y telemetría.</li>
-          </ul>
-          <h4 class="text-lg font-bold gold-text">4. Seguridad de los datos</h4>
-          <p>Protección mediante: Almacenamiento local únicamente, independencia de Internet y control total del usuario.</p>
-          <h4 class="text-lg font-bold gold-text">5. Derechos del usuario</h4>
-          <ul class="list-disc ml-5">
-            <li>Acceso, Exportación y Eliminación de todos los datos en cualquier momento.</li>
-          </ul>
-          <h4 class="text-lg font-bold gold-text">6. Servicios de terceros</h4><p>No utilizamos ninguno.</p>
-          <h4 class="text-lg font-bold gold-text">7. Contacto e Información</h4>
-          <p>Email: usethis1234@proton.me | Desarrollador: VBF PRO</p>
-          <p>Cumple con GDPR, CCPA y COPPA.</p>
-          <p class="text-gold font-bold">Resumen: Sus datos financieros son solo suyos. No los vemos ni los almacenamos.</p>
+          <p><strong>Fecha de vigencia:</strong> 25 de enero de 2026<br><strong>Última actualización:</strong> 25 de enero de 2026</p>
+          
+          <h4 class="text-lg font-bold gold-text uppercase">1. Descripción general</h4>
+          <p>BudgetPro Navigator se compromete a proteger su privacidad. Esta política explica nuestras prácticas de datos para la aplicación de escritorio ("la App").</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">2. Almacenamiento de datos</h4>
+          <p><strong>Todos los datos se almacenan localmente en su dispositivo.</strong> La App no envía datos a servidores externos, no los sube a la nube ni los transmite por Internet.</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">3. Recopilación de datos</h4>
+          <p><strong>No recopilamos NINGÚN dato.</strong> La App funciona totalmente offline. <strong>Lo que no recopilamos:</strong> Nombres, correos, credenciales bancarias, transacciones o ubicación.</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">4. Seguridad</h4>
+          <p>Protección mediante almacenamiento local exclusivo, independencia de Internet, sin acceso de terceros y control total del usuario sobre la eliminación de datos.</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">5. Derechos del usuario</h4>
+          <p>Usted tiene derecho a Acceder, Exportar y Eliminar toda la información dentro de la aplicación en cualquier momento.</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">6. Licencia y Prueba</h4>
+          <p>La App incluye una <strong>prueba gratuita de 7 días</strong>. Tras la prueba, se requiere un <strong>pago único de por vida de 25 EUR por ordenador</strong>. Las licencias están vinculadas al ID de hardware de su dispositivo.</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">7. Información de contacto</h4>
+          <p>Email: <span class="gold-text">contact@vbfpro.com</span><br>Desarrollador: VBF PRO</p>
+
+          <div class="border-t border-white/10 pt-4 italic text-center text-gold">
+            "Sus datos financieros son solo suyos. No los vemos, no los almacenamos y no los compartimos."
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SECCIÓN PILARES -->
   <section id="pillars" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Pilares del Navigator</h2>
+    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">¿Por qué BudgetPro Navigator?</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibilidad</h3><p class="text-sm">Panel unificado para todos sus bancos y tarjetas.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Inteligencia</h3><p class="text-sm">Limpieza de transacciones y proyecciones por IA.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Control</h3><p class="text-sm">Seguimiento de capital y valor de mercado inmobiliario.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibilidad Total</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Sinergia Multi-Cuenta: Rastree ahorros e inversiones en una sola vista.</li>
+          <li>Divisas Globales: Tasas en tiempo real para EUR, USD, MAD, etc.</li>
+          <li>Conciliación VISA: Emparejamiento automático de pagos.</li>
+        </ul>
+      </div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Inmuebles Smart</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Lógica Break-Even: Calcule precio de venta tras impuestos/inflación.</li>
+          <li>Equity y LTV: Vea su propiedad real frente al banco.</li>
+          <li>Velocidad de Riqueza: Previsión mensual de apreciación.</li>
+        </ul>
+      </div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Inteligencia IA</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Limpieza Smart: Categorización automática de transacciones.</li>
+          <li>Presupuesto Recursivo: KPIs de gasto disponible en tiempo real.</li>
+          <li>Previsión 2030: Proyecte su valor neto a 5 años.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <!-- TOUR VISUAL -->
   <section id="screenshots" class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Galería</h2>
+    <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Tour Visual</h2>
     <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-1-dashboard.png" class="rounded-lg mb-2 w-full h-auto text-[10px] uppercase"><span class="text-[10px] font-bold gold-text block text-center uppercase">01. Dashboard</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-2-budgets.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text block text-center uppercase">02. Presupuestos</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-3-reports.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text block text-center uppercase">03. Reportes</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-4-privacy.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text block text-center uppercase">04. Privacidad</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-5-property.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text block text-center uppercase">05. Activos</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-6-account-settings.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text block text-center uppercase">06. Ajustes</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-1-dashboard.png" alt="Dashboard" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Panel Principal</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-2-budgets.png" alt="Budgets" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Planificación</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-3-reports.png" alt="Reports" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Reportes Financieros</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-4-privacy.png" alt="Privacy" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">04. Privacidad de Datos</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-5-property.png" alt="Property" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">05. Gestión de Activos</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-6-account-settings.png" alt="Settings" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">06. Ajustes del Sistema</span>
+      </div>
     </div>
   </section>
 
+  <!-- CTA Y LICENCIA -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-4xl font-black mb-6 gold-text uppercase">Tome las riendas</h2>
-    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 shadow-xl">Descargar para Windows</a>
+    <h2 class="text-4xl font-black mb-2 gold-text uppercase">Tome el mando de su riqueza</h2>
+    <p class="text-gray-400 mb-8 uppercase tracking-widest text-xs">Prueba gratuita de 7 días incluida con cada descarga</p>
+    
+    <div class="inline-block glass p-1 border border-gold/30 rounded-2xl mb-10">
+      <div class="bg-white/5 px-10 py-6 rounded-xl">
+         <span class="block text-gray-400 text-xs uppercase mb-1">Pago Único de por Vida</span>
+         <span class="text-5xl font-black gold-text">25 EUR</span>
+         <span class="block text-gray-500 text-[10px] mt-2 italic">Por ordenador / dispositivo</span>
+      </div>
+    </div>
+
+    <div class="mb-16">
+      <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" 
+         download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block shadow-xl hover:scale-105 transition">
+         Descargar para Windows
+      </a>
+    </div>
+    
     <div id="license" class="glass p-12 rounded-[3rem] text-left">
-      <h3 class="text-2xl font-black mb-6 gold-text uppercase">Solicitud de Licencia</h3>
+      <h3 class="text-2xl font-black mb-4 gold-text uppercase">Proceso de Activación</h3>
+      <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+        1. Envíe el formulario inferior para registrar su hardware.<br>
+        2. Le enviaremos un <strong>enlace de pago de PayPal</strong> a su correo.<br>
+        3. Tras el pago, su <strong>Clave de Activación</strong> le será enviada de inmediato.
+      </p>
+
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
         <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Nombre" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
-          <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="text" name="name" placeholder="Nombre Completo" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="email" name="email" placeholder="Correo Electrónico" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
         </div>
-        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase shadow-lg">Solicitar Clave</button>
+        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Solicitar Enlace PayPal</button>
       </form>
     </div>
   </section>
 
+  <!-- Modal -->
   <div id="modal" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 sm:p-10 cursor-pointer" onclick="this.style.display='none'">
     <img id="modal-img" src="" class="max-w-full max-h-full border-4 border-gold rounded-3xl shadow-2xl animate__animated animate__zoomIn animate__faster">
+    <div class="absolute top-10 right-10 text-white text-5xl">&times;</div>
   </div>
 
+  <!-- SCRIPTS -->
   <script>
     function openTab(evt, tabName) {
       const contents = document.getElementsByClassName("tab-content");
@@ -188,6 +303,9 @@
       const clickedImg = element.querySelector('img');
       if (clickedImg) { modalImg.src = clickedImg.src; modal.style.display = 'flex'; }
     }
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") { document.getElementById('modal').style.display = 'none'; }
+    });
   </script>
 </body>
 </html>

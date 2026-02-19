@@ -16,10 +16,12 @@
     .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
     .card-hover:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7); }
     .platform-badge { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); color: var(--gold); padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .tab-btn { border-bottom: 2px solid transparent; color: #94a3b8; cursor: pointer; }
     .tab-btn.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
+
     .legal-scroll::-webkit-scrollbar { width: 4px; }
     .legal-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     .legal-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
@@ -51,7 +53,7 @@
           <a href="#pillars" class="hover:text-white transition">Pillars</a>
           <a href="#screenshots" class="hover:text-white transition">Gallery</a>
         </div>
-        <a href="#license" class="px-5 py-2 gold-bg text-black rounded font-black text-[11px] uppercase hover:scale-105 transition">LICENSE</a>
+        <a href="#license" class="px-5 py-2 gold-bg text-black rounded font-black text-[11px] uppercase hover:scale-105 transition">GET LICENSE</a>
       </div>
     </div>
   </nav>
@@ -69,12 +71,16 @@
           <span class="gold-text">Start Engineering Your Future.</span>
         </h1>
         <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
-          The Ultimate Dashboard for Total Financial Sovereignty. <b>VBF BudgetPro Navigator</b> shows you where your wealth is growing.
+          The ultimate dashboard for total financial sovereignty. Managing your accounts shouldn't be a second job. <b>VBF BudgetPro Navigator</b> shows you exactly where your wealth is growing.
         </p>
-        <div class="flex gap-4">
-          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition">Get Started</a>
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition w-full sm:w-auto text-center">
+            Start 7-Day Free Trial
+          </a>
+          <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold italic">No credit card required</span>
         </div>
       </div>
+
       <div class="animate__animated animate__fadeInRight relative">
         <div class="absolute inset-0 bg-yellow-500/20 blur-[100px] rounded-full"></div>
         <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl min-h-[300px] flex items-center justify-center">
@@ -85,9 +91,10 @@
     </div>
   </header>
 
-  <!-- CAPABILITIES -->
+  <!-- CAPABILITIES (TABS) -->
   <section id="features" class="max-w-5xl mx-auto px-6 py-20">
     <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">System Capabilities</h2>
+    
     <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
       <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Core Engine</button>
       <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Wealth Intel</button>
@@ -95,148 +102,198 @@
       <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Legal</button>
     </div>
 
+    <!-- Engine Tab -->
     <div id="engine" class="tab-content active animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">High-Velocity Reconciliation</h3><p class="text-gray-300">Process years of transactions in seconds. Sync multiple accounts and cards unified without cloud dependency.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs"><span class="gold-text">SYNC:</span> ONLINE<br><span class="gold-text">CURRENCY:</span> EUR, USD, MAD<br><span class="gold-text">ENCRYPT:</span> AES-256</div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">High-Velocity Reconciliation</h3>
+          <p class="text-gray-300">Process years of transactions in seconds. Sync multiple accounts and VISA cards unified without cloud dependency or monthly subscription fees.</p>
+        </div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs text-center">
+            <span class="gold-text">SYNC STATUS:</span> OPERATIONAL<br>
+            <span class="gold-text">CURRENCIES:</span> EUR, USD, MAD, GBP<br>
+            <span class="gold-text">ENCRYPTION:</span> AES-256 LOCAL
+        </div>
       </div>
     </div>
 
+    <!-- Wealth Tab -->
     <div id="wealth" class="tab-content animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Property Velocity</h3><p class="text-gray-300">Track equity and appreciation. See exactly when investments become pure profit assets.</p></div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10"><span class="text-5xl font-black gold-text">2030</span><p class="text-[10px] uppercase tracking-[0.3em] mt-2">Freedom Horizon</p></div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Property Velocity</h3>
+          <p class="text-gray-300">Track equity, appreciation, and break-even points. Visualize exactly when your property investments become pure profit assets for your 2030 plan.</p>
+        </div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10">
+            <span class="text-5xl font-black gold-text">2030</span>
+            <p class="text-[10px] uppercase tracking-[0.3em] mt-2">Freedom Horizon</p>
+        </div>
       </div>
     </div>
 
+    <!-- Sovereignty Tab -->
     <div id="privacy" class="tab-content animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Zero-Knowledge</h3><p class="text-gray-300">Data never leaves your hardware. Local-first encryption means no leaks and no tracking.</p></div>
-        <div class="flex justify-center"><div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div></div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Zero-Knowledge Storage</h3>
+          <p class="text-gray-300">Your financial history never leaves your hardware. Local-first encryption means zero tracking, zero cloud leaks, and zero corporate surveillance.</p>
+        </div>
+        <div class="flex justify-center">
+            <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div>
+        </div>
       </div>
     </div>
 
-  <!-- LEGAL TAB (ENGLISH COMPLETE - 100% MATCH) -->
-<div id="legal" class="tab-content animate__animated animate__fadeIn">
-  <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
-    <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Privacy Policy</h3>
-    <div class="legal-scroll max-h-[500px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
-      <p><strong>Effective Date:</strong> January 25, 2026<br><strong>Last Updated:</strong> January 25, 2026</p>
-      
-      <h4 class="text-lg font-bold gold-text uppercase">1. Overview</h4>
-      <p>BudgetPro Navigator is committed to protecting your privacy. This privacy policy explains our data practices for the BudgetPro Navigator desktop application ("the App").</p>
+    <!-- LEGAL TAB (100% COMPLETE) -->
+    <div id="legal" class="tab-content animate__animated animate__fadeIn">
+      <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Privacy Policy & Licensing</h3>
+        <div class="legal-scroll max-h-[500px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
+          <p><strong>Effective Date:</strong> January 25, 2026<br><strong>Last Updated:</strong> January 25, 2026</p>
+          
+          <h4 class="text-lg font-bold gold-text uppercase">1. Overview</h4>
+          <p>BudgetPro Navigator is committed to protecting your privacy. This policy explains our data practices for the desktop application ("the App").</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">2. Data Storage</h4>
-      <p><strong>All data is stored locally on your device.</strong> BudgetPro Navigator does not perform any of the following actions:</p>
-      <ul class="list-disc ml-5 space-y-1">
-        <li>Sending data to external servers</li>
-        <li>Uploading information to the cloud</li>
-        <li>Transmitting your financial data over the internet</li>
-        <li>Sharing your information with third parties</li>
-      </ul>
+          <h4 class="text-lg font-bold gold-text uppercase">2. Data Storage</h4>
+          <p><strong>All data is stored locally on your device.</strong> BudgetPro Navigator does not send data to external servers, upload to the cloud, or transmit financial info over the internet.</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">3. Data Collection</h4>
-      <p><strong>We collect NO data.</strong> The App operates entirely offline and does not collect, transmit, or store any user information outside of your local device.</p>
-      
-      <h5 class="font-bold text-white">What We Don't Collect:</h5>
-      <ul class="list-disc ml-5 space-y-1">
-        <li>Personal information (name, email, phone number)</li>
-        <li>Financial account credentials</li>
-        <li>Transaction data</li>
-        <li>Location data</li>
-        <li>Usage analytics</li>
-        <li>Crash reports</li>
-        <li>Telemetry data</li>
-      </ul>
+          <h4 class="text-lg font-bold gold-text uppercase">3. Data Collection</h4>
+          <p><strong>We collect NO data.</strong> The App operates entirely offline. <strong>What we don't collect:</strong> Names, emails, bank credentials, transaction data, location, or usage analytics.</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">4. Data Security</h4>
-      <p>Your financial data is protected through:</p>
-      <ul class="list-disc ml-5 space-y-1">
-        <li><strong>Local Storage Only</strong>: All data remains on your device in encrypted form.</li>
-        <li><strong>No Internet Dependency</strong>: The App functions completely offline.</li>
-        <li><strong>No Third-Party Access</strong>: No external services or APIs have access to your data.</li>
-        <li><strong>User Control</strong>: You have complete control over your data and can delete it at any time.</li>
-      </ul>
+          <h4 class="text-lg font-bold gold-text uppercase">4. Security</h4>
+          <p>Protected by Local Storage, No Internet dependency, No Third-party access, and 100% user control over data deletion.</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">5. User Rights</h4>
-      <ul class="list-disc ml-5 space-y-1">
-        <li><strong>Access</strong>: View all your data within the App at any time.</li>
-        <li><strong>Export</strong>: Create backups of your data using the built-in backup feature.</li>
-        <li><strong>Delete</strong>: Remove all data by uninstalling the App or using the "Clear All Data" function.</li>
-        <li><strong>Control</strong>: Manage all aspects of your financial information without external oversight.</li>
-      </ul>
+          <h4 class="text-lg font-bold gold-text uppercase">5. User Rights</h4>
+          <p>You have the right to Access, Export, and Delete all information within the application at any time.</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">6. Third-Party Services</h4>
-      <p><strong>We use NO third-party services.</strong> The App does not include analytics tools (Google Analytics, etc.), use advertising networks, connect to social media platforms, or integrate with cloud storage services.</p>
+          <h4 class="text-lg font-bold gold-text uppercase">6. Licensing & Trial</h4>
+          <p>The App includes a <strong>7-day free trial</strong>. After the trial, a <strong>one-time lifetime fee of 25 EUR per computer</strong> is required. Licenses are tied to the hardware ID of your device.</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">7. Children's Privacy</h4>
-      <p>The App is designed for adults. We do not knowingly collect information from children under 13 years of age.</p>
+          <h4 class="text-lg font-bold gold-text uppercase">7. Contact Information</h4>
+          <p>Email: <span class="gold-text">usethis1234@proton.me</span><br>Developer: VBF PRO</p>
 
-      <h4 class="text-lg font-bold gold-text uppercase">8. Data Breach Notification</h4>
-      <p>Since no data is transmitted or stored outside your device, there is no risk of a data breach from our servers or services.</p>
-
-      <h4 class="text-lg font-bold gold-text uppercase">9. Contact Information</h4>
-      <p>Email: <strong>usethis1234@proton.me</strong><br>Developer: <strong>VBF PRO</strong></p>
-
-      <h4 class="text-lg font-bold gold-text uppercase">10. Compliance</h4>
-      <p>Compliant with GDPR, CCPA, COPPA, and Windows Store Content Policies.</p>
-
-      <p class="text-gold font-bold">Summary: Your financial data is yours alone. We don't see it, we don't store it, and we don't share it. Everything stays on your device, encrypted and under your control.</p>
+          <div class="border-t border-white/10 pt-4 italic text-center text-gold">
+            "Your financial data is yours alone. We don't see it, we don't store it, and we don't share it."
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </section>
-  <!-- PILLARS -->
+
+  <!-- PILLARS SECTION -->
   <section id="pillars" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase">Pillars of Navigator</h2>
+    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Why BudgetPro Navigator?</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibility</h3><p class="text-sm text-gray-400">Unified dashboard for all cards and banks.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Intelligence</h3><p class="text-sm text-gray-400">AI-driven transaction cleaning and projections.</p></div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Control</h3><p class="text-sm text-gray-400">LTV monitoring and appreciation forecasting.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Total Visibility</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Multi-Account Synergy: Track Savings and Investments in one view.</li>
+          <li>Global Currency: Live rates for EUR, USD, MAD, etc.</li>
+          <li>VISA Reconciliation: Automatic payment matching.</li>
+        </ul>
+      </div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Smart Property</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Break-Even Logic: Calculate sell price after inflation/taxes.</li>
+          <li>Equity & LTV: See your real ownership vs the bank.</li>
+          <li>Wealth Velocity: Monthly appreciation forecasting.</li>
+        </ul>
+      </div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover">
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">AI Intelligence</h3>
+        <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
+          <li>Smart Cleanup: Automatic transaction categorization.</li>
+          <li>Recursive Budget: "Left to spend" KPIs in real-time.</li>
+          <li>2030 Forecast: Project your net worth over 5 years.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- VISUAL TOUR (SMART Magnifier) -->
   <section id="screenshots" class="max-w-6xl mx-auto px-6 py-20">
     <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Visual Tour</h2>
     <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-1-dashboard.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Dashboard</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-2-budgets.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Budgets</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-3-reports.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Reports</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-4-privacy.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">04. Privacy</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-5-property.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">05. Assets</span></div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-6-account-settings.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">06. Settings</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-1-dashboard.png" alt="Dashboard" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Main Dashboard</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-2-budgets.png" alt="Budgets" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Budget Planning</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-3-reports.png" alt="Reports" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Financial Reports</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-4-privacy.png" alt="Privacy" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">04. Data Privacy</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-5-property.png" alt="Property" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">05. Asset Management</span>
+      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
+        <img src="screenshot-6-account-settings.png" alt="Settings" class="rounded-lg mb-2 w-full h-auto">
+        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">06. System Settings</span>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA & LICENSING (PAYPAL PROCESS) -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-4xl font-black mb-6 gold-text uppercase">READY TO NAVIGATE?</h2>
-    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" 
-   download 
-   class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 hover:bg-yellow-500 transition shadow-xl">
-   Télécharger pour Windows
-</a>
+    <h2 class="text-4xl font-black mb-2 gold-text uppercase">Take Command of Your Wealth</h2>
+    <p class="text-gray-400 mb-8 uppercase tracking-widest text-xs">7-Day Free Trial included with every download</p>
+    
+    <div class="inline-block glass p-1 border border-gold/30 rounded-2xl mb-10">
+      <div class="bg-white/5 px-10 py-6 rounded-xl">
+         <span class="block text-gray-400 text-xs uppercase mb-1">One-Time Lifetime Fee</span>
+         <span class="text-5xl font-black gold-text">25 EUR</span>
+         <span class="block text-gray-500 text-[10px] mt-2 italic">Per computer / device</span>
+      </div>
+    </div>
+
+    <div class="mb-16">
+      <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" 
+         download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block shadow-xl hover:scale-105 transition">
+         Download for Windows
+      </a>
+    </div>
+    
+    <!-- LICENSE PROCESS FORM -->
     <div id="license" class="glass p-12 rounded-[3rem] text-left">
-      <h3 class="text-2xl font-black mb-6 gold-text uppercase">License Inquiry</h3>
+      <h3 class="text-2xl font-black mb-4 gold-text uppercase">License Activation Process</h3>
+      <p class="text-gray-300 text-sm mb-8 leading-relaxed">
+        1. Submit the form below to register your hardware.<br>
+        2. We will send a <strong>PayPal payment link</strong> to your email.<br>
+        3. Upon payment, your <strong>Activation Key</strong> will be sent to you immediately.
+      </p>
+
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
         <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
-          <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
         </div>
-        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Request Key</button>
+        <select name="platform" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold">
+            <option value="windows">Windows x64</option>
+        </select>
+        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Request PayPal Link</button>
       </form>
     </div>
   </section>
 
-  <!-- Modal -->
+  <!-- Magnification Modal -->
   <div id="modal" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 sm:p-10 cursor-pointer" onclick="this.style.display='none'">
     <img id="modal-img" src="" class="max-w-full max-h-full border-4 border-gold rounded-3xl shadow-2xl animate__animated animate__zoomIn animate__faster">
     <div class="absolute top-10 right-10 text-white text-5xl">&times;</div>
   </div>
 
+  <!-- SCRIPTS -->
   <script>
+    // Tab Switching
     function openTab(evt, tabName) {
       const contents = document.getElementsByClassName("tab-content");
       for (let i = 0; i < contents.length; i++) { contents[i].classList.remove("active"); }
@@ -245,19 +302,22 @@
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
+
+    // Modal (Smart Magnifier)
     function showModal(element) {
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modal-img');
       const clickedImg = element.querySelector('img');
-      if (clickedImg) { modalImg.src = clickedImg.src; modal.style.display = 'flex'; }
+      if (clickedImg) {
+        modalImg.src = clickedImg.src;
+        modal.style.display = 'flex';
+      }
     }
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) { modal.style.display = "none"; }
-    }
+
+    // Escape Key Support
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") { document.getElementById('modal').style.display = 'none'; }
+    });
   </script>
 </body>
 </html>
-
-
-

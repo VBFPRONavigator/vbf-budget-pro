@@ -16,14 +16,10 @@
     .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
     .card-hover:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7); }
     .platform-badge { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); color: var(--gold); padding: 4px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-    
-    /* Sistema de Abas */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .tab-btn { border-bottom: 2px solid transparent; color: #94a3b8; cursor: pointer; }
     .tab-btn.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
-
-    /* Scrollbar Personalizada */
     .legal-scroll::-webkit-scrollbar { width: 4px; }
     .legal-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     .legal-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
@@ -42,7 +38,6 @@
         </div>
       </div>
       <div class="flex items-center gap-4 sm:gap-6">
-        <!-- SELETOR DE IDIOMA -->
         <select onchange="location = this.value;" class="bg-white/5 border border-white/10 text-[10px] font-bold uppercase gold-text px-2 py-1 rounded outline-none cursor-pointer">
           <option value="pt.html" selected>PT</option>
           <option value="index.html">EN</option>
@@ -60,7 +55,7 @@
     </div>
   </nav>
 
-  <!-- SEÇÃO HERO -->
+  <!-- SECÇÃO HERO -->
   <header class="pt-32 pb-32 px-6 hero-gradient relative">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
       <div class="animate__animated animate__fadeInLeft">
@@ -70,82 +65,80 @@
         </div>
         <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">
           Pare de rastrear o passado.<br>
-          <span class="gold-text">Projete o seu futuro.</span>
+          <span class="gold-text">Projete o seu futuro financeiro.</span>
         </h1>
         <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
-          O painel definitivo para soberania financeira total. O <b>VBF BudgetPro Navigator</b> mostra onde a sua riqueza está crescendo.
+          O painel definitivo para a soberania financeira total. O <b>VBF BudgetPro Navigator</b> mostra o crescimento da sua riqueza.
         </p>
         <div class="flex gap-4">
-          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition">Começar Agora</a>
+          <a href="#cta" class="gold-bg text-black px-8 py-4 rounded font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition">Começar</a>
         </div>
       </div>
-
-      <!-- Imagem Hero com Brilho -->
       <div class="animate__animated animate__fadeInRight relative">
         <div class="absolute inset-0 bg-yellow-500/20 blur-[100px] rounded-full"></div>
         <div class="glass p-4 rounded-[2rem] border-white/10 relative z-10 shadow-2xl min-h-[300px] flex items-center justify-center">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
-               alt="App Screenshot" class="rounded-2xl border border-gold w-full h-auto">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Screenshot App" class="rounded-2xl border border-gold w-full h-auto">
         </div>
       </div>
     </div>
   </header>
 
-  <!-- CAPACIDADES (ABAS) -->
+  <!-- CAPACIDADES -->
   <section id="features" class="max-w-5xl mx-auto px-6 py-20">
     <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">Capacidades do Sistema</h2>
-    
     <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
-      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Motor Principal</button>
+      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Motor Core</button>
       <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Riqueza Intel</button>
       <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Soberania</button>
       <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Legal</button>
     </div>
 
-    <!-- Aba Motor -->
     <div id="engine" class="tab-content active animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
-        <div>
-          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Reconciliação de Alta Velocidade</h3>
-          <p class="text-gray-300">Processe anos de transações em segundos. Sincronize múltiplas contas e cartões sem dependência de nuvem.</p>
-        </div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs">
-            <span class="gold-text">SINCRO:</span> ONLINE<br>
-            <span class="gold-text">MOEDAS:</span> EUR, USD, MAD, GBP<br>
-            <span class="gold-text">CRIPTOGRAFIA:</span> AES-256 LOCAL
-        </div>
+        <div><h3 class="text-2xl font-bold mb-4 gold-text uppercase">Reconciliação de Alta Velocidade</h3><p class="text-gray-300">Processe anos de transações em segundos. Sincronize múltiplas contas e cartões de forma unificada sem dependência da nuvem.</p></div>
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs"><span class="gold-text">SINCRO:</span> ONLINE<br><span class="gold-text">MOEDAS:</span> EUR, USD, MAD<br><span class="gold-text">CRIPTOGRAFIA:</span> AES-256</div>
       </div>
     </div>
 
-    <!-- Aba Legal -->
+    <!-- ABA LEGAL (POLÍTICA DE PRIVACIDADE PT) -->
     <div id="legal" class="tab-content animate__animated animate__fadeIn">
       <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
-        <h3 class="text-2xl font-bold mb-6 gold-text uppercase">Política de Privacidade</h3>
-        <div class="legal-scroll max-h-[400px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
-          <p><strong>Vigência:</strong> 25 de Janeiro de 2026</p>
-          <p><strong>Todos os dados são armazenados localmente no seu dispositivo.</strong> O BudgetPro Navigator não envia dados para servidores externos, não faz upload para a nuvem e não compartilha informações com terceiros.</p>
-          <p>Você tem controle total: acesso, exportação e exclusão de dados a qualquer momento. Em conformidade com GDPR e LGPD.</p>
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Política de Privacidade</h3>
+        <div class="legal-scroll max-h-[500px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
+          <p><strong>Vigência:</strong> 25 de janeiro de 2026<br><strong>Última atualização:</strong> 25 de janeiro de 2026</p>
+          
+          <h4 class="text-lg font-bold gold-text uppercase">Visão Geral</h4>
+          <p>O BudgetPro Navigator está empenhado em proteger a sua privacidade. Esta política explica as nossas práticas de dados para a aplicação de desktop BudgetPro Navigator ("a App").</p>
+
+          <h4 class="text-lg font-bold gold-text uppercase">Armazenamento de Dados</h4>
+          <p><strong>Todos os dados são armazenados localmente no seu dispositivo.</strong> O BudgetPro Navigator NÃO faz o seguinte:</p>
+          <ul class="list-disc ml-5">
+            <li>Enviar dados para servidores externos</li>
+            <li>Fazer upload de informações para a nuvem</li>
+            <li>Transmitir os seus dados financeiros pela Internet</li>
+            <li>Partilhar as suas informações com terceiros</li>
+          </ul>
+
+          <h4 class="text-lg font-bold gold-text uppercase">Segurança</h4>
+          <ul class="list-disc ml-5 space-y-1">
+            <li>Apenas Local: Os dados permanecem encriptados no seu hardware.</li>
+            <li>Sem Dependência da Internet: A aplicação funciona 100% offline.</li>
+            <li>Em Conformidade: Cumprimos com o RGPD, CCPA e COPPA.</li>
+          </ul>
+
+          <p class="text-gold font-bold">Resumo: Os seus dados financeiros são apenas seus. Não os vemos, não os armazenamos e não os partilhamos.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PILARES -->
-  <section id="pillars" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase">Os Pilares do Navigator</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-center">
-      <div class="glass p-8 rounded-xl border border-gold card-hover">
-        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibilidade</h3>
-        <p class="text-sm text-gray-400">Painel unificado para todos os bancos e cartões.</p>
-      </div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover">
-        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Inteligência</h3>
-        <p class="text-sm text-gray-400">Categorização por IA e projeções financeiras a 5 anos.</p>
-      </div>
-      <div class="glass p-8 rounded-xl border border-gold card-hover">
-        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Controlo</h3>
-        <p class="text-sm text-gray-400">Monitorização de património imobiliário e valor líquido.</p>
-      </div>
+  <section id="pillars" class="max-w-5xl mx-auto px-6 py-20 text-center">
+    <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase">Pilares do Navigator</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Visibilidade</h3><p class="text-sm text-gray-400">Painel unificado para todos os seus bancos e cartões.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Inteligência</h3><p class="text-sm text-gray-400">Limpeza de transações e projeções por IA.</p></div>
+      <div class="glass p-8 rounded-xl border border-gold card-hover"><h3 class="text-xl font-bold mb-4 gold-text uppercase">Controlo</h3><p class="text-sm text-gray-400">Monitorização de valor de mercado e capital imobiliário.</p></div>
     </div>
   </section>
 
@@ -153,37 +146,22 @@
   <section id="screenshots" class="max-w-6xl mx-auto px-6 py-20">
     <h2 class="text-3xl font-black mb-10 gold-text uppercase text-center">Tour Visual</h2>
     <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
-        <img src="screenshot-1-dashboard.png" alt="Dashboard" class="rounded-lg mb-2 w-full h-auto">
-        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Painel Principal</span>
-      </div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
-        <img src="screenshot-2-budgets.png" alt="Orçamentos" class="rounded-lg mb-2 w-full h-auto">
-        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Planeamento</span>
-      </div>
-      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)">
-        <img src="screenshot-3-reports.png" alt="Relatórios" class="rounded-lg mb-2 w-full h-auto">
-        <span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Relatórios</span>
-      </div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-1-dashboard.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">01. Painel Principal</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-2-budgets.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">02. Orçamentos</span></div>
+      <div class="glass p-3 rounded-xl border border-white/10 card-hover cursor-pointer" onclick="showModal(this)"><img src="screenshot-3-reports.png" class="rounded-lg mb-2 w-full h-auto"><span class="text-[10px] font-bold gold-text uppercase tracking-widest text-center block">03. Relatórios</span></div>
     </div>
   </section>
 
-  <!-- CTA & LICENÇA -->
+  <!-- CTA -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
     <h2 class="text-4xl font-black mb-6 gold-text uppercase">PRONTO PARA NAVEGAR?</h2>
-    
-    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBFPRONAVIGATORv1.0.0/VBF.Pro.navigator.Setup.1.0.0.exe" 
-       download 
-       class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 shadow-xl hover:bg-yellow-500 transition">
-       Baixar para Windows
-    </a>
-    
+    <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBF_Pro_Navigator/BudgetPro.Navigator.Setup.1.0.0.exe" download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 shadow-xl">Baixar para Windows</a>
     <div id="license" class="glass p-12 rounded-[3rem] text-left">
-      <h3 class="text-2xl font-black mb-6 gold-text uppercase">Solicitação de Licença</h3>
+      <h3 class="text-2xl font-black mb-6 gold-text uppercase">Pedido de Licença</h3>
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
         <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Nome" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          <input type="text" name="name" placeholder="Nome completo" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
           <input type="email" name="email" placeholder="E-mail" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
         </div>
         <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase shadow-lg">Solicitar Chave</button>
@@ -191,10 +169,8 @@
     </div>
   </section>
 
-  <!-- Modal de Zoom -->
   <div id="modal" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 sm:p-10 cursor-pointer" onclick="this.style.display='none'">
-    <img id="modal-img" src="" class="max-w-full max-h-full border-4 border-gold rounded-3xl shadow-2xl animate__animated animate__zoomIn animate__faster">
-    <div class="absolute top-10 right-10 text-white text-5xl">&times;</div>
+    <img id="modal-img" src="" class="max-w-full max-h-full border-4 border-gold rounded-3xl animate__animated animate__zoomIn animate__faster">
   </div>
 
   <script>
@@ -206,20 +182,11 @@
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
-
     function showModal(element) {
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modal-img');
-      const clickedImg = element.querySelector('img');
-      if (clickedImg) {
-        modalImg.src = clickedImg.src;
-        modal.style.display = 'flex';
-      }
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) { modal.style.display = "none"; }
+      modalImg.src = element.querySelector('img').src;
+      modal.style.display = 'flex';
     }
   </script>
 </body>

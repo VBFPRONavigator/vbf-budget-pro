@@ -22,6 +22,11 @@
     .tab-content.active { display: block; }
     .tab-btn { border-bottom: 2px solid transparent; color: #94a3b8; cursor: pointer; }
     .tab-btn.active { border-bottom: 2px solid var(--gold); color: var(--gold); }
+
+    /* Custom Scrollbar for Legal Tab */
+    .legal-scroll::-webkit-scrollbar { width: 4px; }
+    .legal-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+    .legal-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
   </style>
 </head>
 <body>
@@ -83,10 +88,11 @@
   <section id="features" class="max-w-5xl mx-auto px-6 py-20">
     <h2 class="text-3xl md:text-4xl font-black mb-10 gold-text uppercase text-center">System Capabilities</h2>
     
-    <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-2 sm:gap-4">
-      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[10px] sm:text-sm font-bold uppercase tracking-widest transition">Core Engine</button>
-      <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[10px] sm:text-sm font-bold uppercase tracking-widest transition">Wealth Intel</button>
-      <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[10px] sm:text-sm font-bold uppercase tracking-widest transition">Sovereignty</button>
+    <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
+      <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Core Engine</button>
+      <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Wealth Intel</button>
+      <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Sovereignty</button>
+      <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Legal</button>
     </div>
 
     <!-- Engine Tab -->
@@ -127,6 +133,65 @@
         </div>
         <div class="flex justify-center">
             <div class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center animate-pulse text-2xl">🔒</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGAL DISCLAIMER TAB -->
+    <div id="legal" class="tab-content animate__animated animate__fadeIn">
+      <div class="bg-white/5 p-8 sm:p-10 rounded-3xl border border-white/10">
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase">Privacy Policy for BudgetPro Navigator</h3>
+        <div class="legal-scroll max-h-[400px] overflow-y-auto pr-4 text-sm leading-relaxed text-gray-300 space-y-6">
+          <p><strong>Effective Date:</strong> January 25, 2026</p>
+          
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">1. Overview</h4>
+            <p>BudgetPro Navigator is committed to protecting your privacy. This policy explains our data practices for the desktop application.</p>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">2. Data Storage</h4>
+            <p class="mb-2"><strong>All data is stored locally on your device.</strong> BudgetPro Navigator does not:</p>
+            <ul class="list-disc ml-5 space-y-1">
+              <li>Send data to external servers</li>
+              <li>Upload information to the cloud</li>
+              <li>Transmit financial data over the internet</li>
+              <li>Share information with third parties</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">3. Data Collection</h4>
+            <p><strong>We collect NO data.</strong> The App operates entirely offline and does not collect, transmit, or store any user information outside of your local device.</p>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">4. Data Security</h4>
+            <ul class="list-disc ml-5 space-y-1">
+              <li>Local Storage Only: All data remains on your device in encrypted form.</li>
+              <li>No Internet Dependency: The App functions completely offline.</li>
+              <li>No Third-Party Access: No external services or APIs have access to your data.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">5. Third-Party Services</h4>
+            <p>We use NO third-party services. The App does not include analytics tools, advertising networks, or connect to social media.</p>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">6. Compliance</h4>
+            <p>BudgetPro Navigator complies with GDPR, CCPA, COPPA, and Windows Store Content Policies.</p>
+          </section>
+
+          <section>
+            <h4 class="text-lg font-bold gold-text mb-2">7. Contact Information</h4>
+            <p>Email: contact@vbfpro.com<br>Developer: VBF PRO</p>
+          </section>
+
+          <div class="border-t border-white/10 pt-4 italic">
+            "Your financial data is yours alone. We don't see it, we don't store it, and we don't share it. Everything stays on your device."
+          </div>
         </div>
       </div>
     </div>
@@ -198,20 +263,16 @@
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
     <h2 class="text-4xl font-black mb-6 gold-text uppercase">READY TO NAVIGATE?</h2>
     
-    <!-- GitHub Download Release Link -->
     <a href="https://github.com/jpamvdd/vbf-budget-pro/releases/download/VBFPRONAVIGATORv1.0.0/VBF.Pro.navigator.Setup.1.0.0.exe" 
        download 
        class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block mb-10 hover:bg-yellow-500 transition shadow-xl">
        Download for Windows
     </a>
     
-    <!-- Formspree License Inquiry -->
     <div id="license" class="glass p-12 rounded-[3rem] text-left">
       <h3 class="text-2xl font-black mb-6 gold-text uppercase">License Inquiry</h3>
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
-        <!-- Redirect to GitHub Pages thanks.html -->
         <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
-        
         <div class="grid md:grid-cols-2 gap-4">
           <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
           <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
@@ -231,9 +292,7 @@
     <div class="absolute top-10 right-10 text-white text-5xl" style="cursor: pointer;">&times;</div>
   </div>
 
-  <!-- SCRIPTS -->
   <script>
-    // Tab Switching Logic
     function openTab(evt, tabName) {
       const contents = document.getElementsByClassName("tab-content");
       for (let i = 0; i < contents.length; i++) { contents[i].classList.remove("active"); }
@@ -243,12 +302,9 @@
       evt.currentTarget.classList.add("active");
     }
 
-    // Modal / Magnification Logic (SMART version)
     function showModal(element) {
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modal-img');
-      
-      // Grab the source directly from the image inside the clicked box
       const clickedImg = element.querySelector('img');
       if (clickedImg) {
         modalImg.src = clickedImg.src;
@@ -256,14 +312,10 @@
       }
     }
 
-    // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        document.getElementById('modal').style.display = 'none';
-      }
+      if (event.key === "Escape") { document.getElementById('modal').style.display = 'none'; }
     });
 
-    // Close modal when clicking background
     window.onclick = function(event) {
       const modal = document.getElementById('modal');
       if (event.target == modal) { modal.style.display = "none"; }

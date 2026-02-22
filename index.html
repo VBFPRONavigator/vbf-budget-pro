@@ -242,7 +242,7 @@
     </div>
   </section>
 
-  <!-- CTA & LICENSING (PAYPAL PROCESS) -->
+  <!-- CTA & LICENSING -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
     <h2 class="text-4xl font-black mb-2 gold-text uppercase">Take Command of Your Wealth</h2>
     <p class="text-gray-400 mb-8 uppercase tracking-widest text-xs">7-Day Free Trial included with every download</p>
@@ -261,37 +261,41 @@
          Download for Windows
       </a>
     </div>
+<!-- BuyMeACoffee & Ko-fi Purchase Block -->
+  <section class="max-w-2xl mx-auto mt-12 bg-white/10 rounded-xl p-8 shadow-lg animate__animated animate__fadeIn">
+    <h2 class="text-2xl font-bold gold-text mb-4">License Purchase & Activation</h2>
+    <p class="mb-4 text-lg">Purchase BudgetPro Navigator securely via BuyMeACoffee or Ko-fi. After payment, request your license key by email.</p>
+    <div class="flex gap-4 mb-6">
+      <a href="https://buymeacoffee.com/vbfpro/e/512975" target="_blank" rel="noopener" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg text-xl shadow-lg transition">Buy Now on BuyMeACoffee</a>
+      <a href="https://ko-fi.com/s/f9e4c6a5e9" target="_blank" rel="noopener" class="inline-block bg-blue-400 hover:bg-blue-500 text-black font-bold py-3 px-6 rounded-lg text-xl shadow-lg transition">Buy Now on Ko-fi</a>
+    </div>
+    <hr class="my-8 border-gold">
+  </section>
     
     <!-- LICENSE PROCESS FORM -->
-    <div id="license" class="glass p-12 rounded-[3rem] text-left">
+    <div id="license" class="glass p-12 rounded-[3rem] text-left max-w-2xl mx-auto mt-8">
       <h3 class="text-2xl font-black mb-4 gold-text uppercase">License Activation Process</h3>
       <p class="text-gray-300 text-sm mb-8 leading-relaxed">
-        1. Submit the form below to register your hardware.<br>
-        2. We will send a <strong>PayPal payment link</strong> to your email.<br>
-        3. Upon payment, your <strong>Activation Key</strong> will be sent to you immediately.
+          1. Submit the form below to register your hardware and email.<br>
+          2. After payment, your <strong>Activation Key</strong> will be sent to you within 24 hours.
       </p>
-
       <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
-        <input type="hidden" name="_next" value="https://jpamvdd.github.io/vbf-budget-pro/thanks.html">
-        <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
-          <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
-        </div>
-        <select name="platform" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold">
-            <option value="windows">Windows x64</option>
-        </select>
-        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Request PayPal Link</button>
+          <input type="hidden" name="_next" value="https://vbfpronavigator.github.io/vbf-budget-pro/thanks.html">
+          <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+              <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition">
+          </div>
+          <select name="platform" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold">
+              <option value="windows">Windows x64</option>
+          </select>
+          <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg">Request License Key</button>
       </form>
+      <div id="confirmation" class="mt-6 text-green-400 font-bold" style="display:none;"></div>
     </div>
   </section>
 
-  <!-- Magnification Modal -->
-  <div id="modal" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 sm:p-10 cursor-pointer" onclick="this.style.display='none'">
-    <img id="modal-img" src="" class="max-w-full max-h-full border-4 border-gold rounded-3xl shadow-2xl animate__animated animate__zoomIn animate__faster">
-    <div class="absolute top-10 right-10 text-white text-5xl">&times;</div>
-  </div>
+  
 
-  <!-- SCRIPTS -->
   <script>
     // Tab Switching
     function openTab(evt, tabName) {
@@ -321,7 +325,3 @@
   </script>
 </body>
 </html>
-
-
-
-

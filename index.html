@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VBF BudgetPro Navigator | Financial Sovereignty</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="marketing.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
@@ -62,9 +62,11 @@
   <header class="pt-32 pb-32 px-6 hero-gradient relative">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
       <div class="animate__animated animate__fadeInLeft">
-        <div class="flex gap-2 mb-6">
+        <div class="flex gap-2 mb-6 flex-wrap">
           <span class="platform-badge">Windows</span>
           <span class="platform-badge opacity-50 grayscale cursor-not-allowed">Linux (WIP)</span>
+          <span class="platform-badge">5 Languages</span>
+          <span class="platform-badge">Android Ready</span>
         </div>
         <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[0.9] uppercase">
           Stop Tracking the Past.<br>
@@ -97,6 +99,7 @@
     
     <div class="glass rounded-3xl p-2 mb-8 flex justify-center gap-1 sm:gap-4 overflow-x-auto">
       <button onclick="openTab(event, 'engine')" class="tab-btn active px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Core Engine</button>
+      <button onclick="openTab(event, 'analytics')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Analytics</button>
       <button onclick="openTab(event, 'wealth')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Wealth Intel</button>
       <button onclick="openTab(event, 'privacy')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Sovereignty</button>
       <button onclick="openTab(event, 'legal')" class="tab-btn px-4 sm:px-6 py-3 text-[9px] sm:text-sm font-bold uppercase tracking-widest transition whitespace-nowrap">Legal</button>
@@ -107,12 +110,58 @@
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
         <div>
           <h3 class="text-2xl font-bold mb-4 gold-text uppercase">High-Velocity Reconciliation</h3>
-          <p class="text-gray-300">Process years of transactions in seconds. Sync multiple accounts and VISA cards unified without cloud dependency or monthly subscription fees.</p>
+          <p class="text-gray-300 mb-4">Process years of transactions in seconds. Sync multiple accounts and VISA cards unified without cloud dependency or monthly subscription fees.</p>
+          <ul class="text-gray-400 text-sm space-y-2">
+            <li>✅ <strong>Drag & Drop Import</strong> — CSV, Excel (.xlsx), ODS bank statements</li>
+            <li>✅ <strong>Document Attachments</strong> — Attach receipts, invoices, contracts to any transaction</li>
+            <li>✅ <strong>Inline Preview</strong> — View images, PDFs, CSV and text files directly in-app</li>
+            <li>✅ <strong>Open with System App</strong> — Launch files in LibreOffice, Word, or default viewer</li>
+            <li>✅ <strong>AI Smart Categorization</strong> — Auto-classify transactions with a learning engine</li>
+            <li>✅ <strong>5 Languages</strong> — English, French, German, Spanish, Portuguese</li>
+          </ul>
         </div>
-        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs text-center">
+        <div class="bg-black/40 p-6 rounded-xl border border-gold/20 font-mono text-xs text-center space-y-2">
             <span class="gold-text">SYNC STATUS:</span> OPERATIONAL<br>
-            <span class="gold-text">CURRENCIES:</span> EUR, USD, MAD, GBP<br>
-            <span class="gold-text">ENCRYPTION:</span> AES-256 LOCAL
+            <span class="gold-text">CURRENCIES:</span> EUR, USD, MAD, GBP, CHF<br>
+            <span class="gold-text">ENCRYPTION:</span> AES-256 LOCAL<br>
+            <span class="gold-text">FORMATS:</span> CSV, XLSX, ODS, ODT, ODP<br>
+            <span class="gold-text">LANGUAGES:</span> EN · FR · DE · ES · PT
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Tab -->
+    <div id="analytics" class="tab-content animate__animated animate__fadeIn">
+      <div class="bg-white/5 p-10 rounded-3xl border border-white/10">
+        <h3 class="text-2xl font-bold mb-6 gold-text uppercase text-center">Advanced Analytics Suite</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-black/40 p-6 rounded-xl border border-gold/20">
+            <div class="text-3xl mb-3">📊</div>
+            <h4 class="font-bold gold-text mb-2 uppercase text-sm">Budget vs Actual</h4>
+            <p class="text-gray-400 text-sm">Compare planned budgets against real spending per category with visual progress bars. Know exactly where you're over or under budget.</p>
+          </div>
+          <div class="bg-black/40 p-6 rounded-xl border border-gold/20">
+            <div class="text-3xl mb-3">📅</div>
+            <h4 class="font-bold gold-text mb-2 uppercase text-sm">Year-over-Year</h4>
+            <p class="text-gray-400 text-sm">Compare the same month across years. Track income, expenses and savings trends with delta indicators showing improvement or decline.</p>
+          </div>
+          <div class="bg-black/40 p-6 rounded-xl border border-gold/20">
+            <div class="text-3xl mb-3">🏥</div>
+            <h4 class="font-bold gold-text mb-2 uppercase text-sm">Financial Health Score</h4>
+            <p class="text-gray-400 text-sm">A 0–100 gauge scoring your financial fitness based on savings rate, budget adherence, expense trends, debt ratio, and consistency.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-black/40 p-6 rounded-xl border border-gold/20">
+            <div class="text-3xl mb-3">🎯</div>
+            <h4 class="font-bold gold-text mb-2 uppercase text-sm">Savings Goals & Wealth Accumulation</h4>
+            <p class="text-gray-400 text-sm">Set goal-based savings targets with source/target accounts. Progress bars track real deposits automatically. Edit goals anytime with inline editing.</p>
+          </div>
+          <div class="bg-black/40 p-6 rounded-xl border border-gold/20">
+            <div class="text-3xl mb-3">📅</div>
+            <h4 class="font-bold gold-text mb-2 uppercase text-sm">Budget Rules & Planned Transactions</h4>
+            <p class="text-gray-400 text-sm">Create recurring rules for salaries, rent, subscriptions. One-time, weekly, monthly, quarterly, or yearly. Full inline editing and smart KPI dashboard.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -121,12 +170,24 @@
     <div id="wealth" class="tab-content animate__animated animate__fadeIn">
       <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-10 rounded-3xl border border-white/10">
         <div>
-          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Property Velocity</h3>
-          <p class="text-gray-300">Track equity, appreciation, and break-even points. Visualize exactly when your property investments become pure profit assets for your 2030 plan.</p>
+          <h3 class="text-2xl font-bold mb-4 gold-text uppercase">Property & Wealth Intelligence</h3>
+          <p class="text-gray-300 mb-4">Track equity, appreciation, and break-even points. Visualize exactly when your property investments become pure profit assets.</p>
+          <ul class="text-gray-400 text-sm space-y-2">
+            <li>✅ <strong>Break-Even Analysis</strong> — Acquisition costs, taxes, inflation factored in</li>
+            <li>✅ <strong>5-Year Wealth Forecast</strong> — Net worth projection to 2030 with Dream Factor</li>
+            <li>✅ <strong>Net Worth Evolution</strong> — Monthly wealth growth tracking with elegant charts</li>
+            <li>✅ <strong>Loan-to-Value & Equity</strong> — Real-time ownership vs bank position</li>
+            <li>✅ <strong>Investment Tracking</strong> — Log renovations, improvements, and maintenance</li>
+          </ul>
         </div>
         <div class="bg-black/40 p-6 rounded-xl border border-gold/20 text-center py-10">
             <span class="text-5xl font-black gold-text">2030</span>
             <p class="text-[10px] uppercase tracking-[0.3em] mt-2">Freedom Horizon</p>
+            <div class="mt-4 text-left text-gray-400 text-xs space-y-1 font-mono">
+              <div><span class="gold-text">▲</span> Net Worth Evolution</div>
+              <div><span class="gold-text">▲</span> Monthly Wealth Growth</div>
+              <div><span class="gold-text">▲</span> Sovereign Savings Rate</div>
+            </div>
         </div>
       </div>
     </div>
@@ -188,24 +249,30 @@
         <h3 class="text-xl font-bold mb-4 gold-text uppercase">Total Visibility</h3>
         <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
           <li>Multi-Account Synergy: Track Savings and Investments in one view.</li>
-          <li>Global Currency: Live rates for EUR, USD, MAD, etc.</li>
+          <li>Global Currency: Live rates for EUR, USD, MAD, GBP, CHF.</li>
           <li>VISA Reconciliation: Automatic payment matching.</li>
+          <li>Drag & Drop Import: CSV, Excel, ODS bank statements.</li>
+          <li>Document Attachments: Receipts, invoices, contracts on any transaction.</li>
         </ul>
       </div>
       <div class="glass p-8 rounded-xl border border-gold card-hover">
-        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Smart Property</h3>
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">Advanced Analytics</h3>
         <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
-          <li>Break-Even Logic: Calculate sell price after inflation/taxes.</li>
-          <li>Equity & LTV: See your real ownership vs the bank.</li>
-          <li>Wealth Velocity: Monthly appreciation forecasting.</li>
+          <li>Budget vs Actual: Visual progress bars per category.</li>
+          <li>Year-over-Year: Compare same month across years.</li>
+          <li>Health Score: 0–100 financial fitness gauge.</li>
+          <li>Savings Goals: Track progress with automatic matching.</li>
+          <li>Budget Rules: Recurring rules with inline editing.</li>
         </ul>
       </div>
       <div class="glass p-8 rounded-xl border border-gold card-hover">
-        <h3 class="text-xl font-bold mb-4 gold-text uppercase">AI Intelligence</h3>
+        <h3 class="text-xl font-bold mb-4 gold-text uppercase">AI & Intelligence</h3>
         <ul class="list-disc ml-5 text-gray-300 text-sm space-y-2">
           <li>Smart Cleanup: Automatic transaction categorization.</li>
           <li>Recursive Budget: "Left to spend" KPIs in real-time.</li>
           <li>2030 Forecast: Project your net worth over 5 years.</li>
+          <li>Property Intelligence: Break-even, equity, LTV metrics.</li>
+          <li>5 Languages: EN · FR · DE · ES · PT fully translated.</li>
         </ul>
       </div>
     </div>
@@ -242,7 +309,7 @@
     </div>
   </section>
 
-  <!-- CTA & LICENSING -->
+  <!-- CTA & LICENSING (PAYPAL PROCESS) -->
   <section id="cta" class="max-w-3xl mx-auto px-6 py-20 text-center">
     <h2 class="text-4xl font-black mb-2 gold-text uppercase">Take Command of Your Wealth</h2>
     <p class="text-gray-400 mb-8 uppercase tracking-widest text-xs">7-Day Free Trial included with every download</p>
@@ -256,7 +323,7 @@
     </div>
 
     <div class="mb-16">
-      <a href="https://github.com/VBFPRONavigator/vbf-budget-pro/releases/download/NavVBFPRO/BudgetPro.Navigator.Setup.1.0.0.exe" 
+      <a href="https://github.com/VBFPRONavigator/vbf-budget-pro/releases/download/VBFPRO/BudgetPro.Navigator.Setup.1.0.0.exe" 
          download class="gold-bg text-black px-12 py-5 rounded font-black uppercase text-xl inline-block shadow-xl hover:scale-105 transition">
          Download for Windows
       </a>
@@ -296,6 +363,11 @@
 
   
 
+  <!-- IMAGE MODAL -->
+  <div id="modal" style="display:none;" onclick="this.style.display='none'" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer">
+    <img id="modal-img" src="" alt="Preview" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+  </div>
+
   <script>
     // Tab Switching
     function openTab(evt, tabName) {
@@ -325,5 +397,6 @@
   </script>
 </body>
 </html>
+
 
 

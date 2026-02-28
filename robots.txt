@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vbfpronavigator.github.io/vbf-budget-pro/marketing/sitemap.xml

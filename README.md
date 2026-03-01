@@ -34,11 +34,14 @@ One-time license: **€25** — no recurring fees, ever.
 | 🏠 **Real Estate Portfolio** | Track property investments, rental yields, loan amortization |
 | 📊 **Advanced Analytics** | Budget vs. Actual, forecasting, financial health score |
 | 📈 **ECB Market Data** | Live ECB exchange rates and interest rate data |
+| 🏛️ **Enhanced Portfolio & Market Hub** | Net worth portfolio, market insights, investment tracking |
 | 🤖 **AI Categorization** | Smart automatic transaction categorization |
+| 🧪 **Sandbox & Collaboration** | Risk-free demo environment with sample data |
+| 📅 **Predictive Planning** | Recurring rules for salary, subscriptions, savings goals |
 | 🔐 **AES-256 Encryption** | Military-grade local encryption for all data |
 | 🌙 **Dark Mode** | Full dark mode support |
 | 🌍 **5 Languages** | English, French, German, Spanish, Portuguese |
-| 📖 **Built-in Guide** | Comprehensive 8-tab user guide |
+| 📖 **Built-in Guide** | Comprehensive 10-tab user guide |
 | 📤 **Excel Import/Export** | Import from and export to .xlsx files |
 | 🛡️ **100% Offline** | Zero cloud dependency — your data never leaves your device |
 
@@ -115,7 +118,7 @@ Coming soon.
 ## Support
 
 - 📧 Email: usethis1234@proton.me
-- 📖 Built-in User Guide with 8 comprehensive tabs
+- 📖 Built-in User Guide with 10 comprehensive tabs
 - 🐛 [Report an issue](https://github.com/VBFPRONavigator/vbf-budget-pro/issues)
 
 ---
@@ -123,9 +126,13 @@ Coming soon.
 ## Changelog
 
 ### v1.0.0.5 (Latest)
-- Enhanced property investment analytics
-- Improved VISA reconciliation
+- Advanced Analytics dashboard with financial health score
+- Enhanced Portfolio & Market Hub with net worth tracking
 - ECB market data integration
+- Expanded user guide from 8 to 10 tabs
+- Improved VISA reconciliation
+- Predictive planning with recurring rules
+- Sandbox mode for risk-free exploration
 - Performance optimizations
 
 ### v1.0.0 (Initial Release)

@@ -99,7 +99,6 @@ Coming soon.
 | Windows 10/11 | ✅ Available |
 | Android | 🔜 Coming soon |
 | macOS | 🔜 Planned |
-| Linux | 🔜 Planned |
 
 ---
 
@@ -123,7 +122,7 @@ Coming soon.
 
 ## Changelog
 
-### v1.0.0.8 (Latest)
+### v1.0.0.5 (Latest)
 - Enhanced property investment analytics
 - Improved VISA reconciliation
 - ECB market data integration

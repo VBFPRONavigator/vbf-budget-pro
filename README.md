@@ -88,7 +88,7 @@ One-time license: **€25** — no recurring fees, ever.
 
 ### Android
 
-Available as direct APK download from the [Releases](https://github.com/VBFPRONavigator/vbf-budget-pro/releases/latest) page.
+Coming soon.
 
 ---
 
@@ -97,7 +97,7 @@ Available as direct APK download from the [Releases](https://github.com/VBFPRONa
 | Platform | Status |
 |---|---|
 | Windows 10/11 | ✅ Available |
-| Android | ✅ Available |
+| Android | 🔜 Coming soon |
 | macOS | 🔜 Planned |
 | Linux | 🔜 Planned |
 
